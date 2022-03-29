@@ -1,0 +1,263 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: initial;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 0 0 30px;
+}
+
+h2 {
+  position: relative;
+  font-size: 24px;
+  padding-left: 15px;
+}
+
+h2:before {
+  content: '';
+  width: 4px;
+  /* 桜 */
+  background: #FEDFE1;
+  position: absolute;
+  left: 0;
+  height: 75%;
+  top: 12%;
+}
+
+h3 {
+  position: relative;
+  font-size: 1.17em;
+  /* 紅梅色 */
+  color: #E86B79;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+h4 {
+  margin: 15px 0;
+}
+
+blockquote {
+  margin: 2em 0;
+  padding-left: 30px;
+  /* 藤紫 */
+  border-left: 10px solid #8A6BBE;
+}
+
+p {
+  line-height: 1.8em;
+}
+
+li {
+  line-height: 1.8em;
+}
+
+strong {
+  /* 山吹茶 */
+  color: #D19826;
+}
+
+code {
+  border-radius: 5px;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  /* 藤紫 */
+  color: #8A6BBE;
+}
+
+a:focus,
+a:hover {
+  color: #f92672;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: 'Fira Code', Consolas, Monaco, SFMono-Regular, 'Ubuntu Mono', Menlo, 'Source Han Sans CN', '微软雅黑', monospace;
+}
+
+.markdown-body h2 {
+  border-bottom: 0;
+}
+
+.markdown-body h3 {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--smc-header-bottom-color);
+}
+
+.post-toc ol .toc-link,
+.markdown-body a {
+  /* 藤紫 */
+  color: #8A6BBE;
+}
+
+.post-nav-prev,
+.post-nav-next {
+  color: #5f00ff
+}
+
+[data-user-color-scheme='dark'] .post-nav-prev,
+[data-user-color-scheme='dark'] .post-nav-next {
+  color: #ddb9ff;
+}
+
+[data-user-color-scheme='dark'] .post-nav-prev:hover,
+[data-user-color-scheme='dark'] .post-nav-next:hover {
+  color: #f92672;
+}
+
+.markdown-body a:before {
+  background-color: #f92672;
+}
+
+.markdown-body a:focus,
+.markdown-body a:hover {
+  color: #f92672;
+}
+
+.markdown-body blockquote {
+  /* 紅碧 */
+  border-left: 10px solid #7B90D2;
+}
+
+.tag-item .icon,
+.category-item .icon {
+  margin-right: 2px;
+  margin-bottom: 0;
+}
+
+#post .post-title {
+  font-size: 2rem;
+}
+
+.markdown-body h2 {
+  font-size: 1.8rem;
+}
+
+.markdown-body h3 {
+  font-size: 1.5rem;
+}
+
+.markdown-body h4 {
+  font-size: 1.3rem;
+}
+
+.markdown-body h5 {
+  font-size: 1.1rem;
+}
+
+.markdown-body h6 {
+  font-size: 1rem;
+}
+
+#back-to-top {
+  right: 0;
+  bottom: 2rem;
+}
+
+html:not([data-user-color-scheme='dark']) .sidebar {
+  /* background-color: #FCF5F7; */
+  background-size: 180px;
+  background-position: left bottom -1.5rem;
+}
+
+[data-user-color-scheme='dark'] .sidebar {
+  background-size: 180px;
+  background-position: right -2.5rem bottom;
+}
+
+html:not([data-user-color-scheme='dark']) #footer {
+  color: #111;
+  background-color: #fff;
+}
+
+[data-user-color-scheme='dark'] #footer {
+  background-color: rgba(23, 32, 42, 0.95)
+}
+
+#footer {
+  margin-top: 0.5rem !important;
+  padding-top: 0.5rem !important;
+}
+
+#footer a {
+  color: #7e2eff;
+}
+
+body::before {
+  /* background-image: url(https://api.ixiaowai.cn/api/api.php); */
+  background-image: url(https://cdn.jsdelivr.net/gh/asadahimeka/asadahimeka.github.io@master/z/images/2.png);
+}
+
+[data-user-color-scheme='dark'] body::before {
+  background-image: url(https://cdn.jsdelivr.net/gh/asadahimeka/asadahimeka.github.io@master/z/images/8.jpg);
+}
+
+.post-card {
+  border-radius: 5px;
+}
+
+#archive h2::before,
+.post-card h2::before {
+  display: none;
+}
+
+html:not([data-user-color-scheme='dark']) .markdown-body code:not([class*="language-"]) {
+  color: #ec71b7;
+  background-color: #f4f2f9;
+}
+
+.search-popup {
+  backdrop-filter: none;
+  background-image: url(https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/stars-timing-0-blur-30px.jpg);
+}
+
+[data-user-color-scheme='dark'] .search-popup {
+  background-image: url(https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/mountain-blur-30px.jpg);
+}
+
+#category .post-meta {
+  margin-right: 10px;
+}
+
+.warning blockquote {
+  border-left: 10px solid #f2711c;
+}
+
+.warning-outdate blockquote {
+  margin: 1rem 0;
+  margin-bottom: 0;
+  padding: .6rem 1rem;
+  color: #cf590c;
+  border-left: 10px solid #f2711c;
+  background-color: rgba(242, 113, 28, 0.1);
+}
+
+.bangumi-picture img {
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 1 !important;
+  margin: 0 !important;
+}
+
+.bangumi-comments {
+  font-size: 14px !important;
+  margin-top: 32px;
+  padding: 0 20px;
+}
+
+.bangumi-title {
+  padding: 0 20px;
+}
+
+.bangumi-info-items {
+  color: #00a1d6 !important;
+}
