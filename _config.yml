@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://asadahimeka.github.io/z
+url: https://asadahimeka.vercel.app
 permalink: :year/:month/:day/:title/
 permalink_defaults:
   lang: en
@@ -98,7 +98,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yun
+theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -199,7 +199,7 @@ live2d:
   model:
     # 推荐使用 CDN 来加载模型
     # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json
-    use: /z/live2d_models/histoire/index.json
+    use: /live2d_models/histoire/index.json
   display:
     position: right
     width: 160
