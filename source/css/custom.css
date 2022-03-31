@@ -81,7 +81,7 @@ a:hover {
 
 .markdown-body code,
 .markdown-body pre {
-  font-family: 'Fira Code', Consolas, Monaco, SFMono-Regular, 'Ubuntu Mono', Menlo, 'Source Han Sans CN', '微软雅黑', monospace;
+  font-family: 'Fira Code', Consolas, Monaco, SFMono-Regular, 'Ubuntu Mono', Menlo, monospace;
 }
 
 .markdown-body h2 {
@@ -194,11 +194,11 @@ html:not([data-user-color-scheme='dark']) #footer {
 
 body::before {
   /* background-image: url(https://api.ixiaowai.cn/api/api.php); */
-  background-image: url(https://cdn.jsdelivr.net/gh/asadahimeka/asadahimeka.github.io@master/z/images/2.png);
+  background-image: url(/images/2.png);
 }
 
 [data-user-color-scheme='dark'] body::before {
-  background-image: url(https://cdn.jsdelivr.net/gh/asadahimeka/asadahimeka.github.io@master/z/images/8.jpg);
+  background-image: url(/images/8.jpg);
 }
 
 .post-card {
@@ -217,11 +217,11 @@ html:not([data-user-color-scheme='dark']) .markdown-body code:not([class*="langu
 
 .search-popup {
   backdrop-filter: none;
-  background-image: url(https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/stars-timing-0-blur-30px.jpg);
+  background-image: url(/images/stars-timing-0-blur-30px.jpg);
 }
 
 [data-user-color-scheme='dark'] .search-popup {
-  background-image: url(https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/mountain-blur-30px.jpg);
+  background-image: url(/images/mountain-blur-30px.jpg);
 }
 
 #category .post-meta {

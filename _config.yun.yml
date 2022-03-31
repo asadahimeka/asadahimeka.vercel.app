@@ -44,7 +44,7 @@ head:
   js:
     async:
       # 这里是你从 iconfont 处获得的图标链接。
-      iconfont: //at.alicdn.com/t/font_2598701_iaz8nhub3w.js
+      iconfont: https://at.alicdn.com/t/font_2598701_iaz8nhub3w.js
 
 # ---------------------------------------------------------------
 # Sidebar Settings
@@ -53,9 +53,9 @@ head:
 # Posts / Categories / Tags in sidebar.
 sidebar:
   # bg_image: https://cdn.jsdelivr.net/gh/YunYouJun/cdn@master/img/bg/alpha-stars-timing-1.webp
-  bg_image: https://cdn.jsdelivr.net/gh/asadahimeka/asadahimeka.github.io@master/z/images/1.png
+  bg_image: /images/1.png
   # dark_bg_image: https://cdn.jsdelivr.net/gh/YunYouJun/cdn@master/img/bg/dark-alpha-stars-timing-1.webp
-  dark_bg_image: https://cdn.jsdelivr.net/gh/asadahimeka/asadahimeka.github.io@master/z/images/1.gif
+  dark_bg_image: /images/1.gif
   bg_position: bottom 1rem center
   # 在侧边栏显示 Hexo 原生标签页
   tagcloud:
@@ -74,7 +74,7 @@ social:
   - name: RSS
     # set rss in your root config
     # https://github.com/hexojs/hexo-generator-feed
-    link: /z/atom.xml # config.feed.path
+    link: /atom.xml # config.feed.path
     icon: icon-rss-line
     color: orange
   - name: Qzone
@@ -265,9 +265,9 @@ smoothScroll: true
 bg_image:
   enable: true
   # url: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/stars-timing-0-blur-30px.jpg # recomend image related to your mode
-  url: /z/images/2.png
+  url: /images/2.png
   # dark: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/galaxy.jpg
-  dark: /z/images/8.jpg
+  dark: /images/8.jpg
   # blur: 30px
   opacity: 1
 
@@ -351,7 +351,7 @@ say:
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi:
-  enable: false
+  enable: true
   site_uv: true
   site_uv_icon: icon-user-line
   site_pv: true
@@ -369,8 +369,8 @@ wordcount:
 # search
 search:
   modal: true
-  bg_image: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/stars-timing-0-blur-30px.jpg
-  dark_bg_image: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/mountain-blur-30px.jpg
+  bg_image: /images/stars-timing-0-blur-30px.jpg
+  dark_bg_image: /images/mountain-blur-30px.jpg
   # placeholder: 想要搜些什么？
 
 engine_search:
@@ -422,3 +422,60 @@ comment:
 albums:
   enable: true
   icon: icon-gallery-line
+
+# cdn for third-party library (alternative include)
+# please see in _vendors.yml
+vendors:
+  algolia_search: https://cdn.bootcdn.net/ajax/libs/algoliasearch/4.13.0/algoliasearch-lite.umd.min.js
+  instant_search: https://cdn.bootcdn.net/ajax/libs/instantsearch.js/4.40.1/instantsearch.production.min.js
+  anime: https://cdn.bootcdn.net/ajax/libs/animejs/3.2.1/anime.min.js
+  scrollreveal: https://cdn.bootcdn.net/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js
+  katex:
+    js: https://cdn.bootcdn.net/ajax/libs/KaTeX/0.15.3/katex.min.js
+    css: https://cdn.bootcdn.net/ajax/libs/KaTeX/0.15.3/katex.min.css
+    auto_render: https://cdn.bootcdn.net/ajax/libs/KaTeX/0.15.3/contrib/auto-render.min.js
+    copy_tex:
+      css: https://cdn.bootcdn.net/ajax/libs/KaTeX/0.15.3/contrib/copy-tex.min.css
+      js: https://cdn.bootcdn.net/ajax/libs/KaTeX/0.15.3/contrib/copy-tex.min.js
+  aplayer:
+    css: https://cdn.bootcdn.net/ajax/libs/aplayer/1.9.1/APlayer.min.css
+    js: https://cdn.bootcdn.net/ajax/libs/aplayer/1.9.1/APlayer.min.js
+    meting: https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js
+  mermaid: https://cdn.bootcdn.net/ajax/libs/mermaid/8.14.0/mermaid.min.js
+  trianglify: https://cdn.bootcdn.net/ajax/libs/trianglify/3.0.0/trianglify.min.js
+  lightgallery:
+    css: https://cdn.bootcdn.net/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css
+    js: https://cdn.bootcdn.net/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js
+  pjax: https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js
+  crypto_js:
+    all: https://cdn.bootcdn.net/ajax/libs/crypto-js/4.1.1/crypto-js.min.js
+  wordcloud: https://cdn.bootcdn.net/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js
+  revealjs:
+    css: https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css
+    js: https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js
+    plugin:
+      markdown: https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js
+      notes: https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js
+      highlight:
+        js: https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js
+        monokai: https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/highlight/monokai.css
+  vue: https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.min.js
+  darken: https://cdn.jsdelivr.net/npm/darken@1.5.0
+
+  # comment
+  valine_js: https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js
+  waline_js: https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js
+  minivaline_js: https://cdn.jsdelivr.net/npm/minivaline@6
+  # https://github.com/SukkaW/DisqusJS
+  disqusjs:
+    css: https://cdn.jsdelivr.net/npm/disqusjs@latest/dist/disqusjs.css
+    js: https://cdn.jsdelivr.net/npm/disqusjs@latest/dist/disqus.js
+  twikoo: https://cdn.jsdelivr.net/npm/twikoo@latest/dist/twikoo.all.min.js
+  iconify: https://code.iconify.design/2/2.1.1/iconify.min.js
+  busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+  unocss:
+    runtime: https://cdn.jsdelivr.net/npm/@unocss/runtime
+    core: https://cdn.jsdelivr.net/npm/@unocss/runtime/core.global.js
+    uno: https://cdn.jsdelivr.net/npm/@unocss/runtime/uno.global.js
+    attributify: https://cdn.jsdelivr.net/npm/@unocss/runtime/attributify.global.js
+    mini: https://cdn.jsdelivr.net/npm/@unocss/runtime/mini.global.js
