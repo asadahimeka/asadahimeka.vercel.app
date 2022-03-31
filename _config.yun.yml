@@ -322,7 +322,7 @@ footer:
     enable: false
     prefix: 本博客已萌萌哒地运行
     suffix: (●'◡'●)
-    start_time: "2019-04-12T00:00:00"
+    start_time: "2017-11-02T00:00:00"
 
 # Post meta display settings
 post_meta:
