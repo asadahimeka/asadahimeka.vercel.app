@@ -37,10 +37,13 @@ categories:
 # ---------------
 favicon: /images/favicon.ico
 
+js:
+  - /custom/custom.js
+
 # 加载自定义的资源
 head:
   css:
-    custom: /css/custom.css
+    custom: /custom/custom.css
   js:
     async:
       # 这里是你从 iconfont 处获得的图标链接。
@@ -351,7 +354,7 @@ say:
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi:
-  enable: true
+  enable: false
   site_uv: true
   site_uv_icon: icon-user-line
   site_pv: true
