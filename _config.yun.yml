@@ -439,6 +439,8 @@ albums:
   enable: true
   icon: icon-gallery-line
 
+anonymous_image: https://upload-bbs.mihoyo.com/upload/2022/04/05/260511332/2035615ec9d3b134ebbb557f674e7fbc_3856836711554332744.jpg
+
 # cdn for third-party library (always include)
 cdn:
   css:

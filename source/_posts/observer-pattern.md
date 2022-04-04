@@ -32,7 +32,7 @@ categories:
 
 ## UML
 
-![ObserverPattern UML](https://asadahimeka.github.io/test/b/observer/img/obuml.png "ObserverPattern UML")
+![ObserverPattern UML](https://upload-bbs.mihoyo.com/upload/2022/04/05/260511332/6afca6c386f36e8d741441e1e6e49223_4676297406069797186.png "ObserverPattern UML")
 
 ## 模式分析
 
@@ -44,7 +44,7 @@ categories:
 
 ### 在观察者模式中也有两个主要角色：**Subject （主题）** 和 **Observer （观察者）** 。它们分别对应上边例子中的期刊出版方和订阅者。
 
-![relationship](https://asadahimeka.github.io/test/b/observer/img/x.png)
+![relationship](https://upload-bbs.mihoyo.com/upload/2022/04/05/260511332/ac36f8db78687f44dc288b34d2eb04b1_144564271825817954.png)
 
 ## 模式优缺点
 
@@ -160,7 +160,7 @@ e.g 2
 
 * UML
 
-![Cat](https://asadahimeka.github.io/test/b/observer/img/cat.png)
+![Cat](https://upload-bbs.mihoyo.com/upload/2022/04/05/260511332/0a2730de86ac8ac646f54908f85b0677_6930268922353687629.png)
 
 #### Subject
 
@@ -388,7 +388,7 @@ RxJS 引入了 Observables （可观察对象），一个全新的 "推" 体系�
 * 支持 map、filter、reduce 等操作符
 * 延迟执行，当订阅的时候才会开始执行
 
-![PullPush](https://asadahimeka.github.io/test/b/observer/img/pp.jpg)
+![PullPush](https://upload-bbs.mihoyo.com/upload/2022/04/05/260511332/453964c7c356cd70a02c3c860bce5051_4555920067121677757.jpg)
 
 ## REF
 

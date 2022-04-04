@@ -6,7 +6,7 @@ type: albums
 albums:
   - caption: Konachan
     url: /albums/konachan.html
-    cover: https://konachan.net/data/preview/e8/d6/e8d618349e76aa63647823a9a021df36.jpg
+    cover: https://konachan.net/data/preview/82/b5/82b5c1ce3048743cc048f8d8ccf4ceb7.jpg
     desc: Anime Wallpaper Collection
   - caption: Camera
     url: /albums/camera.html

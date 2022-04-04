@@ -210,7 +210,7 @@ live2d:
   model:
     # 推荐使用 CDN 来加载模型
     # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json
-    use: /live2d_models/histoire/index.json
+    use: https://pf.wuniutech.com/kari/files/-/live2d_models/histoire/index.json
   display:
     position: right
     width: 165

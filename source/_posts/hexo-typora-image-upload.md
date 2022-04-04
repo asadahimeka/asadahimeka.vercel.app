@@ -19,7 +19,7 @@ Typora 是一款知名的 Markdown 编辑器，简单好用，体验良好。使
 
 打开 `文件 - 偏好设置 - 图像` 进行修改如下图修改
 
-![typora-setting-image](https://cdn.jsdelivr.net/gh/asadahimeka/withpicbed@pic/images/20210521195323.png)
+![typora-setting-image](https://upload-bbs.mihoyo.com/upload/2022/04/05/260511332/b3c14f030f1b7bed65563ad2e3d75e6e_8404618712675426050.png)
 
 这样拖拽或粘贴过来的图片会自动复制到 `source/images` 下面，不过这样只是可以在 typora 中查看图片了，要想在 hexo 中查看就需要图片路径与服务器中相符合， `source/images` 文件夹下的图片在 hexo 中可以用如 `/images/abc.png` 的路径访问到，而 typora 可以设置图片根目录，设置完了后图片路径都是 `/images/abc.png` 这样的，这样一配合就解决了图片路径问题，具体做法是在 `格式 - 图像 - 设置图片根目录` 中 将 `source` 文件夹设置为图片根目录，也可在每篇 Markdown 文档中 YAML Front Matter 中添加 `typora-root-url: ..`，或者直接在 `scaffolds` 中的模板里直接添加，这样每次 `hexo new post` 时就会自动生成了。
 
@@ -31,11 +31,11 @@ Typora 是一款知名的 Markdown 编辑器，简单好用，体验良好。使
 
 在 typora 里可以设置插入图片时自动上传，如下图设置，这里使用 `PicGo` App 来上传图片。
 
-![BaiduShurufa_2021-5-21_20-12-18](https://cdn.jsdelivr.net/gh/asadahimeka/withpicbed@pic/images/20210521201909.png)
+![BaiduShurufa_2021-5-21_20-12-18](https://upload-bbs.mihoyo.com/upload/2022/04/05/260511332/674295d13cd41f130573cfa5fb8d09e5_1232174737957433436.png)
 
 PicGo 可以点击下载按钮到浏览器下载，安装完成后配置好图床，就可以上传图片了。这里使用 GitHub 图床（SM.MS 体验应该更好）。
 
-![image-20210521202345259](https://cdn.jsdelivr.net/gh/asadahimeka/withpicbed@pic/images/20210521202345.png)
+![image-20210521202345259](https://upload-bbs.mihoyo.com/upload/2022/04/05/260511332/2e9e821e12eddbadeac9dde9a53dbbf9_2453065688534570503.png)
 
 具体就是在 GitHub 新建一个仓库专门用来存放图片，然后在 PicGo 里填写 用户名/仓库名，分支一般写 main ，token 在 GitHub 设置里生成。
 
@@ -46,7 +46,7 @@ PicGo 可以点击下载按钮到浏览器下载，安装完成后配置好图�
 >
 > **2.** 新建一个仓库
 >
-> ![img](https://cdn.jsdelivr.net/gh/Molunerfinn/test@master/picgo/create_new_repo.png)
+> ![img](https://pic.rmb.bdstatic.com/bjh/events/ab89561593817c156265527cf8b8dc53.png)
 >
 > 记下你取的仓库名。
 >
@@ -56,25 +56,25 @@ PicGo 可以点击下载按钮到浏览器下载，安装完成后配置好图�
 >
 > 然后点击`Generate new token`。
 >
-> ![img](https://cdn.jsdelivr.net/gh/Molunerfinn/test@master/picgo/generate_new_token.png)
+> ![img](https://pic.rmb.bdstatic.com/bjh/events/8e70f6462768dbab79f7510bcf128e2e.png)
 >
 > 把 repo 的勾打上即可。然后翻到页面最底部，点击`Generate token`的绿色按钮生成 token。
 >
-> ![img](https://cdn.jsdelivr.net/gh/Molunerfinn/test@master/picgo/20180508210435.png)
+> ![img](https://pic.rmb.bdstatic.com/bjh/events/3bde3bb9b7f2d7716404c9eed1f21d53.png)
 >
 > **注意：**这个 token 生成后只会显示一次！你要把这个 token 复制一下存到其他地方以备以后要用。
 >
-> ![img](https://cdn.jsdelivr.net/gh/Molunerfinn/test@master/picgo/copy_token.png)
+> ![img](https://pic.rmb.bdstatic.com/bjh/events/39f88acf6f5890b5eed5ae6caaa0c341.png)
 >
 > **4.** 配置 PicGo
 >
 > **注意：**仓库名的格式是`用户名/仓库`，比如我创建了一个叫做`test`的仓库，在 PicGo 里我要设定的仓库名就是`Molunerfinn/test`。一般我们选择`main`分支即可。然后记得点击确定以生效，然后可以点击`设为默认图床`来确保上传的图床是 GitHub。
 >
-> ![img](https://cdn.jsdelivr.net/gh/Molunerfinn/test@master/picgo/setup_github.png)
+> ![img](https://pic.rmb.bdstatic.com/bjh/events/c39ff4607de74eb6f9093539fa1304b8.png)
 >
 > 至此配置完毕，已经可以使用了。当你上传的时候，你会发现你的仓库里也会增加新的图片了：
 >
-> ![img](https://cdn.jsdelivr.net/gh/Molunerfinn/test@master/picgo/success.png)
+> ![img](https://pic.rmb.bdstatic.com/bjh/events/f88f55737ac44d0cd193fbd103ca09d1.png)
 
 ## REF
 

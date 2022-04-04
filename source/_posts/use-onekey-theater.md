@@ -26,18 +26,18 @@ categories:
 
 放一张桌面的图片
 
-![](https://cdn.jsdelivr.net/gh/asadahimeka/withpicbed@pic/images/20210521172715.png)
+![](https://pic.rmb.bdstatic.com/bjh/events/42d27c1069ec13e1a0fd692e30cc56cc.jpeg)
 
 截屏看不出来，用手机拍照对比一下吧。左边为开启之前的，右边为开启之后的效果。
 
-<div style="display:flex"><img style="width:45%;margin-right:10px" src="https://cdn.jsdelivr.net/gh/asadahimeka/withpicbed@pic/images/20210521180508.jpg"> <img style="width:45%" src="https://cdn.jsdelivr.net/gh/asadahimeka/withpicbed@pic/images/20210521180520.jpg"></div>
+<div style="display:flex"><img style="width:45%;margin-right:10px" src="https://pic.rmb.bdstatic.com/bjh/events/a5f368275a80299e29c7447f054ed84b.jpeg"> <img style="width:45%" src="https://pic.rmb.bdstatic.com/bjh/events/499952aa4a856cc289f9af21c75734f8.jpeg"></div>
 
 ---
 
 视频对照：
 
-<div><video style="margin:0" width=300 height=400 controls src="https://cdn.jsdelivr.net/gh/asadahimeka/withpicbed@pic/videos/VID_20210521_175525.mp4"></video></div>
+<div><video style="margin:0" width=300 height=400 controls src="https://himekana.coding.net/p/test/d/khn/git/raw/stk/douga/VID_20210521_175525.mp4"></video></div>
 
 ### 下载地址
 
-[Onekey Theater.zip](https://cdn.jsdelivr.net/gh/asadahimeka/withpicbed@pic/Onekey%20Theater.zip)
+[Onekey Theater.zip](https://himekana.coding.net/p/test/d/khn/git/raw/stk/sonota/Onekey_Theater.zip)

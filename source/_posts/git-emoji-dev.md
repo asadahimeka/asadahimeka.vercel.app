@@ -457,7 +457,7 @@ $ git commit
 
 ⚠️ 钩子**不要**和 `gitmoji -c` 命令一起使用。
 
-![gitmoji commit](https://user-images.githubusercontent.com/7629661/41189947-1de56124-6bd6-11e8-9567-e7f1a8e99500.png)
+![gitmoji commit](https://upload-bbs.mihoyo.com/upload/2022/04/05/260511332/42a8891d132ec881504bc338057c85b9_6571090905170179297.png)
 
 ### Search
 
@@ -467,7 +467,7 @@ $ git commit
 $ gitmoji -s "criteria"
 ```
 
-![gitmoji search](https://user-images.githubusercontent.com/7629661/41189878-d24a3b78-6bd4-11e8-8d47-c8edf3b87e53.png)
+![gitmoji search](https://upload-bbs.mihoyo.com/upload/2022/04/05/260511332/9fa4b2684de6e4e64fced0ac4efd3c42_2060869562642035894.png)
 
 ### List
 
@@ -477,7 +477,7 @@ $ gitmoji -s "criteria"
 $ gitmoji -l
 ```
 
-![gitmoji list](https://user-images.githubusercontent.com/7629661/41189877-d22b145a-6bd4-11e8-97f8-a8e36bcab062.png)
+![gitmoji list](https://upload-bbs.mihoyo.com/upload/2022/04/05/260511332/923bc5b62c89d794129b79b6589e9716_6461487663436501177.png)
 
 ### Update
 
@@ -491,7 +491,7 @@ $ gitmoji -u
 
 运行 `gitmoji -g` 设置首选项。
 
-![gitmoji config](https://user-images.githubusercontent.com/7629661/41189876-d21167ee-6bd4-11e8-9008-4c987502f307.png)
+![gitmoji config](https://upload-bbs.mihoyo.com/upload/2022/04/05/260511332/cae6d1a67cbd4071f0fc582a51cc7464_2379149892528069066.png)
 
 #### Options
 
