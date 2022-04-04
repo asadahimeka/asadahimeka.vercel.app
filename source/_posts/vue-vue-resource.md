@@ -1,10 +1,11 @@
 ---
 title: Vue-resource 相关总结
-date: 2018-01-08
-updated: 2018-01-08
 tags:
   - Vue
   - JavaScript
+abbrlink: b2e2ddc8
+date: 2018-01-08 00:00:00
+updated: 2018-01-08 00:00:00
 categories:
 ---
 

@@ -1,11 +1,12 @@
 ---
 title: Observer Pattern （观察者模式）
-date: 2017-11-03
-updated: 2017-11-03
 tags:
   - Design Pattern
   - Observer Pattern
   - JavaScript
+abbrlink: beda1d8f
+date: 2017-11-03 00:00:00
+updated: 2017-11-03 00:00:00
 categories:
 ---
 ## 模式动机

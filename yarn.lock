@@ -2978,6 +2978,14 @@ he@^1.2.0:
   resolved "https://registry.nlark.com/he/download/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
 
+hexo-abbrlink@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.npmmirror.com/hexo-abbrlink/-/hexo-abbrlink-2.2.1.tgz#03a3bbf73816ed19279e97452ce617c6caf98b5a"
+  integrity sha512-yvazN7bbrIb7p8QU3nJ/8fbDmir1mFroYvUYcJz5xpc6DtszKggschmqZg6WNUdjhDBFyDwksrIUfwQnw0OOuA==
+  dependencies:
+    hexo-front-matter "^1.0.0"
+    hexo-fs "^3.1.0"
+
 hexo-all-minifier@^0.5.7:
   version "0.5.7"
   resolved "https://registry.npm.taobao.org/hexo-all-minifier/download/hexo-all-minifier-0.5.7.tgz#8dd2564f9299e6a662f77a9771b404771202aba3"
@@ -3037,6 +3045,13 @@ hexo-cli@^4.3.0:
     minimist "^1.2.5"
     resolve "^1.11.0"
     tildify "^2.0.0"
+
+hexo-front-matter@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmmirror.com/hexo-front-matter/-/hexo-front-matter-1.0.0.tgz#0b48b1c1ed143e8cb25b3b223a9037385d910655"
+  integrity sha512-Hn8IIzgWWnxYTekrjnA0rxwWMoQHifyrxKMqVibmFaRKf4AQ2V6Xo13Jiso6CDwYfS+OdA41QS5DG1Y+QXA5gw==
+  dependencies:
+    js-yaml "^3.13.1"
 
 hexo-front-matter@^3.0.0:
   version "3.0.0"
@@ -4053,7 +4068,7 @@ js-yaml-js-types@^1.0.0:
   dependencies:
     esprima "^4.0.1"
 
-js-yaml@^3.12.0:
+js-yaml@^3.12.0, js-yaml@^3.13.1:
   version "3.14.1"
   resolved "https://registry.nlark.com/js-yaml/download/js-yaml-3.14.1.tgz?cache=0&sync_timestamp=1618847165988&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fjs-yaml%2Fdownload%2Fjs-yaml-3.14.1.tgz#dae812fdb3825fa306609a8717383c50c36a0537"
   integrity sha1-2ugS/bOCX6MGYJqHFzg8UMNqBTc=

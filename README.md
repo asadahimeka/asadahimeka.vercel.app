@@ -36,4 +36,4 @@ themes\yun\layout\post.pug Line 25
 ### Customize configuration
 
 See [Hexo Configuration Reference](https://hexo.io/zh-cn/).
-See [Theme Yun Configuration Reference](https://hexo-theme-yun.vercel.app/).
+See [Theme Yun Configuration Reference](http://yun.yunyoujun.cn/).

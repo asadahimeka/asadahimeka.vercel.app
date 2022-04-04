@@ -1,10 +1,11 @@
 ---
 title: AngularJS 中 Controller 与 Service 的分层设计编码
-date: 2017-12-30
-updated: 2017-12-30
 tags:
   - AngularJS
   - JavaScript
+abbrlink: 41b22377
+date: 2017-12-30 00:00:00
+updated: 2017-12-30 00:00:00
 categories:
 ---
 ## 前言

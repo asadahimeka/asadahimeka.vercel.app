@@ -1,10 +1,11 @@
 ---
 title: hexo + typora 图片插入解决办法
-date: 2020-04-10
-updated: 2020-04-10
-tags: 
+tags:
   - Hexo
   - Typora
+abbrlink: 12a70b22
+date: 2020-04-10 00:00:00
+updated: 2020-04-10 00:00:00
 categories:
 ---
 

@@ -5,6 +5,32 @@ html {
   -webkit-font-smoothing: initial;
 }
 
+html:not(.dark) {
+  --prism-comment-style: normal;
+  --prism-foreground: #1c1c1c;
+  --prism-background: #f5f5f5;
+  --prism-comment: #A9A9AA;
+  --prism-string: #53A053;
+  --prism-literal: #5D5D5F;
+  --prism-variable: #5D5D5F;
+  --prism-number: #FF6D12;
+  --prism-keyword: #7C4DFF;
+  --prism-function: #437AED;
+  --prism-boolean: #b168a8;
+  --prism-constant: #FF6D12;
+  --prism-deleted: #ff0049;
+  --prism-class: #2EA9DF;
+  --prism-builtin: #00BEC4;
+  --prism-property: #FA278E;
+  --prism-namespace: #CD6069;
+  --prism-punctuation: #8E8E90;
+  --prism-decorator: #EF8ED8;
+  --prism-operator: #A9A9AA;
+  --prism-selector: #53A053;
+  --prism-regex: #6699FF;
+  --prism-json-property: #CD6069;
+}
+
 h1 {
   font-size: 32px;
   margin: 0 0 30px;
@@ -216,11 +242,11 @@ html:not(.dark) .markdown-body code:not([class*="language-"]) {
 
 .search-popup {
   backdrop-filter: none;
-  background-image: url(/images/stars-timing-0-blur-30px.jpg);
+  background-image: url(https://pic.rmb.bdstatic.com/bjh/events/71f1378d44d22f1ada01a40944e86013.jpeg);
 }
 
 .dark .search-popup {
-  background-image: url(/images/mountain-blur-30px.jpg);
+  background-image: url(https://upload-bbs.mihoyo.com/upload/2022/04/04/260511332/5f36c9c2ec91bf56caf5331e4ed4918d_4875177930097895211.jpg);
 }
 
 #category .post-meta {
@@ -233,7 +259,7 @@ html:not(.dark) .markdown-body code:not([class*="language-"]) {
 
 .warning-outdate blockquote {
   margin: 1rem 0;
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
   padding: .6rem 1rem;
   color: #cf590c;
   border-left: 10px solid #f2711c;
@@ -265,28 +291,23 @@ html:not(.dark) .markdown-body code:not([class*="language-"]) {
   line-height: 1.5;
 }
 
-html:not(.dark) {
-  --prism-comment-style: normal;
-  --prism-foreground: #1c1c1c;
-  --prism-background: #f5f5f5;
-  --prism-comment: #A9A9AA;
-  --prism-string: #53A053;
-  --prism-literal: #5D5D5F;
-  --prism-variable: #5D5D5F;
-  --prism-number: #FF6D12;
-  --prism-keyword: #7C4DFF;
-  --prism-function: #437AED;
-  --prism-boolean: #b168a8;
-  --prism-constant: #FF6D12;
-  --prism-deleted: #ff0049;
-  --prism-class: #2EA9DF;
-  --prism-builtin: #00BEC4;
-  --prism-property: #FA278E;
-  --prism-namespace: #CD6069;
-  --prism-punctuation: #8E8E90;
-  --prism-decorator: #EF8ED8;
-  --prism-operator: #A9A9AA;
-  --prism-selector: #53A053;
-  --prism-regex: #6699FF;
-  --prism-json-property: #CD6069;
+#live2d-widget {
+  opacity: 0;
+  transition: 0.2s;
+}
+
+a,
+.copy-btn,
+.heimu:hover,
+.hty-icon-button,
+#menu-btn {
+  cursor: url(/custom/cursors/link.cur) 12 12, pointer;
+}
+
+/* h1,h2,h3,h4,h5,h6,p,pre,code,blockquote,li {
+  cursor: url(/custom/cursors/text.cur),auto;
+} */
+
+html {
+  filter: grayscale(0) !important;
 }

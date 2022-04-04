@@ -1,8 +1,11 @@
 ---
 title: 解决 AMD 笔记本不插电源时屏幕偏暗的问题
-date: 2021-06-06
-updated: 2021-06-06
-tags: ["AMD", "Screen"]
+tags:
+  - AMD
+  - Screen
+abbrlink: 6b7b7700
+date: 2021-06-06 00:00:00
+updated: 2021-06-06 00:00:00
 categories:
 ---
 

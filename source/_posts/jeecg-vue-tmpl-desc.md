@@ -1,9 +1,13 @@
 ---
 title: Jeecg-vue-tmpl 相关说明
+tags:
+  - JavaScript
+  - Vue
+  - Jeecg
+categories: Jeecg
+abbrlink: afb3a8de
 date: 2021-06-08 15:31:45
 updated: 2021-06-08 15:31:45
-tags: ["JavaScript","Vue","Jeecg"]
-categories: Jeecg
 ---
 
 Jeecg-vue-tmpl 修改自原版 JeecgBoot 前端项目，根据自身需求进行若干修改，如果有其它需求，比如使用 online 开发功能，建议直接拉取官方代码自行修改，此自用项目模板维护至 2.4.2 版本不再更新。

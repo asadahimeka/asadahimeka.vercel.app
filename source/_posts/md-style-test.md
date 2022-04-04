@@ -1,8 +1,9 @@
 ---
 title: Markdown 样式测试
-date: 2017-12-01
-updated: 2017-12-01
 tags: Markdown
+abbrlink: 622167e
+date: 2017-12-01 00:00:00
+updated: 2017-12-01 00:00:00
 categories:
 ---
 

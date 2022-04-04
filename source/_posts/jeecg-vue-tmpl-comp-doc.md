@@ -1,9 +1,13 @@
 ---
 title: Jeecg-vue-tmpl 自用文档
+tags:
+  - JavaScript
+  - Vue
+  - Jeecg
+categories: Jeecg
+abbrlink: 9e50dc76
 date: 2021-06-08 19:22:56
 updated: 2021-06-08 19:22:56
-tags: ["JavaScript","Vue","Jeecg"]
-categories: Jeecg
 ---
 
 JeecgBoot 前端初始项目 改 自用文档

@@ -1,6 +1,6 @@
 {
   "name": "hexo-site",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "server": "hexo server",
@@ -8,13 +8,18 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "bangumi": "hexo bangumi -u",
-    "prebuild": "hexo clean && yarn bangumi"
+    "fixvendor": "node vendor_fix.js",
+    "prebuild": "yarn clean && yarn bangumi && yarn fixvendor"
+  },
+  "engines": {
+    "node": ">=12.0.0"
   },
   "hexo": {
     "version": "6.1.0"
   },
   "dependencies": {
     "hexo": "^6.1.0",
+    "hexo-abbrlink": "^2.2.1",
     "hexo-bilibili-bangumi": "^1.7.4",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",

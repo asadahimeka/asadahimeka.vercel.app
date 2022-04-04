@@ -1,9 +1,13 @@
 ---
 title: Jeecg-vue-tmpl Readme
+tags:
+  - JavaScript
+  - Vue
+  - Jeecg
+categories: Jeecg
+abbrlink: 59df13e1
 date: 2021-06-08 10:23:12
 updated: 2021-06-08 10:23:12
-tags: ["JavaScript","Vue","Jeecg"]
-categories: Jeecg
 ---
 
 JeecgBoot 前端初始项目

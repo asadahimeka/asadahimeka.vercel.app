@@ -1,10 +1,11 @@
 ---
 title: 利用 Settings Sync 插件同步 VS Code 设置
-date: 2018-03-04
-updated: 2018-03-04
 tags:
   - VS Code
   - Settings Sync
+abbrlink: 9b0da72f
+date: 2018-03-04 00:00:00
+updated: 2018-03-04 00:00:00
 categories:
 ---
 早就听说这个插件了，今天用了一下，确实挺方便的。通过把配置文件创建为 Gist 上来实现了 VS Code 设置的同步，下次换电脑或重装时就很便利了。在插件商店搜索 Settings Sync 然后安装，重载窗口，打开命令面板，输入 sync 即可查看所有相关命令。

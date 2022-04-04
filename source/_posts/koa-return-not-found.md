@@ -1,11 +1,12 @@
 ---
 title: koa returning 'Not Found'
-date: 2018-04-07
-updated: 2018-04-07
 tags:
   - JavaScript
   - Node.js
   - Koa
+abbrlink: 224cd510
+date: 2018-04-07 00:00:00
+updated: 2018-04-07 00:00:00
 categories:
 ---
 最近在看 koa，用 koa+mysql 搭了个简单 demo 环境后准备试一下，然后就一直返回 Not Found，把数据库相关操作注释掉之后又好了，最后发现原因是 logger 中间件里的`next()`前没加`return` 。[喷水]

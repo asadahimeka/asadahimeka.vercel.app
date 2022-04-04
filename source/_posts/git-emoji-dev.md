@@ -1,10 +1,11 @@
 ---
 title: 在 Git 提交信息中使用 Emoji
-date: 2019-05-01
-updated: 2019-05-01
-tags: 
+tags:
   - Git
   - Emoji
+abbrlink: f237058d
+date: 2019-05-01 00:00:00
+updated: 2019-05-01 00:00:00
 categories:
 ---
 <!-- <p align="center">

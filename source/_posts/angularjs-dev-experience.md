@@ -1,10 +1,11 @@
 ---
 title: AngularJs 开发的一些基本准则
-date: 2018-01-03
-updated: 2018-12-03
 tags:
   - AngularJS
   - JavaScript
+abbrlink: a6cb3820
+date: 2018-01-03 00:00:00
+updated: 2018-12-03 00:00:00
 categories:
 ---
 

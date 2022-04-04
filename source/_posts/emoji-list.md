@@ -1,8 +1,9 @@
 ---
 title: Emoji list
-date: 2019-04-25
-updated: 2019-05-25
 tags: Emoji
+abbrlink: 9b8e354f
+date: 2019-04-25 00:00:00
+updated: 2019-05-25 00:00:00
 categories:
 ---
 

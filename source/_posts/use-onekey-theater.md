@@ -1,8 +1,12 @@
 ---
 title: 利用 Onekey Theater 改善屏幕显示效果
+tags:
+  - Onekey_Theater
+  - Screen
+  - Software
+abbrlink: 83747ad2
 date: 2021-05-21 15:07:46
 updated: 2021-05-21 15:07:46
-tags: ["Onekey_Theater", "Screen", "Software"]
 categories:
 ---
 

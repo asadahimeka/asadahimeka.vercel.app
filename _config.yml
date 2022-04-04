@@ -4,8 +4,8 @@
 
 # Site
 title: Himekana's
-subtitle: 'Nanashi.'
-description: 'Nothing to say.'
+subtitle: 'Fly to the sky.'
+description: '明日はきっと晴れるさ。'
 keywords:
 author: Sakura Yumine
 language: ja
@@ -14,9 +14,19 @@ timezone: 'Asia/Shanghai'
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://asadahimeka.vercel.app
-permalink: :year/:month/:day/:title/
-permalink_defaults:
-  lang: en
+permalink: posts/:abbrlink/
+abbrlink:
+  alg: crc32 #support crc16(default) and crc32
+  rep: hex #support dec(default) and hex
+  drafts: false #(true)Process draft,(false)Do not process draft
+  # Generate categories from directory-tree
+  # depth: the max_depth of directory-tree you want to generate, should > 0
+  auto_category:
+    enable: false #默认为 true， 手改改为 false
+    depth:
+# permalink: :year/:month/:day/:title/
+# permalink_defaults:
+#   lang: en
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
@@ -32,7 +42,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :year-:month-:day-:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
@@ -182,15 +192,16 @@ js_concator:
 
 aplayer:
   asset_inject: false
-  cdn: https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js
-  style_cdn: https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css
-  meting: false
-  meting_cdn: https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js
+  cdn: https://lib.baomitu.com/aplayer/latest/APlayer.min.js
+  style_cdn: https://lib.baomitu.com/aplayer/latest/APlayer.min.css
+  meting: true
+  meting_cdn: https://pf.wuniutech.com/kari/files/-/lib/meting_1/Meting.min.js
 
 live2d:
-  enable: false
+  enable: true
   # 推荐使用 jsdelivr 的 CDN 来加载
-  scriptFrom: jsdelivr
+  # scriptFrom: jsdelivr
+  scriptFrom: https://pf.wuniutech.com/kari/files/-/lib/live2d-widget/lib/L2Dwidget.min.js
   pluginRootPath: live2dw/
   pluginJsPath: lib/
   pluginModelPath: assets/
@@ -202,8 +213,8 @@ live2d:
     use: /live2d_models/histoire/index.json
   display:
     position: right
-    width: 160
-    height: 300
+    width: 165
+    height: 382
     hOffset: 0
     vOffset: 100
   mobile:
