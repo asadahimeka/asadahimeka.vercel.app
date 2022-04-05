@@ -8,6 +8,6 @@ photos:
     src: https://gitee.com/asadahimeka/withpic/raw/as/images/IMG_20200801_194802.jpg
     desc: 二回目
   - caption: 夏祭り_律律子
-    src: https://cdn.jsdelivr.net/gh/asadahimeka/withpicbed@pic/images/IMG_0986.JPG
+    src: https://pic.rmb.bdstatic.com/bjh/events/8aa6b53f14209a4591782ca07e18aea9.jpeg
     desc: 空に消えてった 打ち上げ花火
 ---
