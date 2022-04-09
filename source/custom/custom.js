@@ -16,17 +16,17 @@
     if (el) cb && cb(el);
   };
   w.addEventListener('load', () => {
-    q('.sidebar-nav', ul => {
-      ul.insertAdjacentHTML('afterbegin', `
-        <li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" title="HOME" onclick='location=CONFIG.root'>
-          <svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg>
-        </li>
-      `);
-    });
     if (['/albums', '/girls', '/bangumi'].some(e => location.href.includes(e))) {
       q('#live2d-widget', el => { el.style.display = 'none'; });
     }
     if (location.href.includes('/posts')) {
+      q('.sidebar-nav', ul => {
+        ul.insertAdjacentHTML('afterbegin', `
+          <li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" title="HOME" onclick='location=CONFIG.root'>
+            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg>
+          </li>
+        `);
+      });
       q('.post-time time', el => {
         const nowdate = new Date();
         const postyear = new Date(el.getAttribute('datetime'));

@@ -424,7 +424,7 @@ aplayer:
 
 # special
 mourn:
-  enable: true
+  enable: false
   days:
     - "4-4"
     - "5-12"

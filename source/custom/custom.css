@@ -218,14 +218,6 @@ html:not(.dark) #footer {
   color: #7e2eff;
 }
 
-/* body::before {
-  background-image: url(/images/2.png);
-}
-
-.dark body::before {
-  background-image: url(/images/8.jpg);
-} */
-
 .post-card {
   border-radius: 5px;
 }
@@ -301,13 +293,13 @@ a,
 .heimu:hover,
 .hty-icon-button,
 #menu-btn {
-  cursor: url(/custom/cursors/link.cur) 12 12, pointer;
+  cursor: url(/custom/cursors/link.cur),pointer;
 }
 
-/* h1,h2,h3,h4,h5,h6,p,pre,code,blockquote,li {
+input,textarea,p,pre,code,blockquote {
   cursor: url(/custom/cursors/text.cur),auto;
-} */
+}
 
-html {
-  filter: grayscale(0) !important;
+.photo-list-cover {
+  cursor: zoom-in;
 }
