@@ -1,0 +1,4 @@
+zh-CN: # 将要覆盖的语言
+  footer:
+    powered: "Powered by %s"
+    theme: Theme

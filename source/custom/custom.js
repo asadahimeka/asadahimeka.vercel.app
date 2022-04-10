@@ -2,10 +2,7 @@
 (function(w, d, h) {
   h.insertAdjacentHTML('beforeend', '<meta name="referrer" content="no-referrer">');
   if (location.href.includes('/posts')) {
-    h.insertAdjacentHTML('beforeend', `
-      <link rel="stylesheet" href="https://pf.wuniutech.com/kari/files/-/lib/fancybox/fancybox.css">
-      <style>.post-body img{cursor: zoom-in;}</style>
-    `);
+    h.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="https://pf.wuniutech.com/kari/files/-/lib/fancybox/fancybox.css"><style>.post-body img{cursor:zoom-in;}</style>');
     const s = d.createElement('script');
     s.src = 'https://pf.wuniutech.com/kari/files/-/lib/fancybox/fancybox.umd.js';
     s.defer = true;
@@ -24,11 +21,7 @@
   w.addEventListener('load', () => {
     if (location.href.includes('/posts')) {
       q('.sidebar-nav', ul => {
-        ul.insertAdjacentHTML('afterbegin', `
-          <li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" title="HOME" onclick='location=CONFIG.root'>
-            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg>
-          </li>
-        `);
+        ul.insertAdjacentHTML('afterbegin', '<li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" title="HOME" onclick="location=CONFIG.root"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></li>');
       });
       q('.post-time time', el => {
         const nowdate = new Date();
@@ -36,11 +29,7 @@
         const diff = yearDiff(nowdate, postyear);
         if (diff > 2) {
           q('.post-body', el => {
-            el.insertAdjacentHTML('afterbegin', `
-              <div class="warning-outdate">
-                <blockquote>This post was written ${diff} years ago, some information may be outdated.</blockquote>
-              </div>
-            `);
+            el.insertAdjacentHTML('afterbegin', '<div class="warning-outdate"><blockquote>This post was written ${diff} years ago, some information may be outdated.</blockquote></div>');
           });
         }
       });
@@ -66,17 +55,14 @@
     q('.powered a[href^="https://github.com/YunYouJun/hexo-theme-yun"]', el => {
       el.insertAdjacentHTML('afterbegin', '<img src="https://www.yunyoujun.cn/yun.svg" alt="" style="height: 18px;vertical-align: middle;margin-right: 4px" loading="lazy">');
     });
-    q('.links-item[href*="/girls/"]', el => {
-      el.innerHTML = '<img class="icon" style="border-radius:50%;" src="https://upload-bbs.mihoyo.com/upload/2022/04/09/260511332/336236120ae30af15a9643e45c6dc2dc_4356123477863484768.png" alt>'
-    });
-    if (location.href.includes('/bangumi')) {        
-      if (location.href.includes('/cinema')) {        
-        q('.bangumi-tabs', el => { 
-          el.insertAdjacentHTML('beforeend', '<a class="bangumi-tab" id="bangumi-tab4" href="./">追番</a>')
+    if (location.href.includes('/bangumi')) {
+      if (location.href.includes('/cinema')) {
+        q('.bangumi-tabs', el => {
+          el.insertAdjacentHTML('beforeend', '<a class="bangumi-tab" id="bangumi-tab4" href="./">追番</a>');
         });
       } else {
-        q('.bangumi-tabs', el => { 
-          el.insertAdjacentHTML('beforeend', '<a class="bangumi-tab" id="bangumi-tab4" href="./cinema">追剧</a>')
+        q('.bangumi-tabs', el => {
+          el.insertAdjacentHTML('beforeend', '<a class="bangumi-tab" id="bangumi-tab4" href="./cinema.html">追剧</a>');
         });
       }
     }

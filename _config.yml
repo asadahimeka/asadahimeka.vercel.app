@@ -8,9 +8,7 @@ subtitle: 'Fly to the sky.'
 description: '明日はきっと晴れるさ。'
 keywords:
 author: Sakura Yumine
-language:
-  - ja
-  - zh-CN
+language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -178,6 +176,7 @@ js_minifier:
   # compress:
   exclude:
     - "*.min.js"
+    - "**/node_modules/**/*.js"
 image_minifier:
   enable: false
   interlaced: false
