@@ -1,12 +1,9 @@
 /* eslint-disable strict */
-(function(w, d, h) {
+(function (w, d, h) {
   h.insertAdjacentHTML('beforeend', '<meta name="referrer" content="no-referrer">');
   if (location.href.includes('/posts')) {
-    h.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="https://pf.wuniutech.com/kari/files/-/lib/fancybox/fancybox.css"><style>.post-body img{cursor:zoom-in;}</style>');
-    const s = d.createElement('script');
-    s.src = 'https://pf.wuniutech.com/kari/files/-/lib/fancybox/fancybox.umd.js';
-    s.defer = true;
-    h.appendChild(s);
+    h.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css"><style>.post-body img{cursor:zoom-in;}</style>');
+    loadScript('https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.umd.js')
   }
   if (['/albums', '/girls', '/bangumi'].some(e => location.href.includes(e))) {
     h.insertAdjacentHTML('beforeend', '<style>#live2d-widget{opacity:0!important}</style>');
@@ -14,10 +11,6 @@
   if (location.href.includes('/bangumi')) {
     h.insertAdjacentHTML('beforeend', '<style>.post-count{display:none}article#page{padding-top:0}</style>');
   }
-  const q = (sel, cb) => {
-    const el = d.querySelector(sel);
-    if (el) cb && cb(el);
-  };
   w.addEventListener('load', () => {
     if (location.href.includes('/posts')) {
       q('.sidebar-nav', ul => {
@@ -67,7 +60,29 @@
       }
     }
 
+    loadLive2d();
+
   });
+
+  function q(sel, cb) {
+    const el = document.querySelector(sel);
+    if (el) cb && cb(el);
+  };
+
+  function loadScript(src, isDefer, callback) {
+    const script = document.createElement('script');
+    script.src = src;
+    isDefer && (script.defer = true);
+    script.addEventListener('load', () => { callback && callback() }, false);
+    document.head.appendChild(script);
+  }
+
+  function loadLive2d() {
+    if (document.body.clientWidth < 600) return;
+    if (['/albums', '/girls', '/bangumi', '/pixivic'].some(e => location.href.includes(e))) return;
+    document.body.insertAdjacentHTML('beforeend', '<style>.live2d {position: fixed;right: -100px;bottom: 0px;width: 500px!important;height: 437.5px!important;z-index: 998;pointer-events: none!important;transition: 0.2s;}</style><div id="live2d" class="live2d"><canvas id="live2dm" class="live2d" style="z-index: 999 !important; width: 800px; height: 700px; touch-action: none; cursor: inherit;" width="800" height="700"></canvas></div>')
+    loadScript('https://npm.elemecdn.com/chenyfan-os@0.0.0-r3/load.js', true, () => window.loadModel());
+  }
 
   function yearDiff(dt1, dt2) {
     let diffYear = (dt2.getTime() - dt1.getTime()) / 1000;

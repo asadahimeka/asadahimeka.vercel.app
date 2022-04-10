@@ -196,13 +196,13 @@ aplayer:
   cdn: https://lib.baomitu.com/aplayer/latest/APlayer.min.js
   style_cdn: https://lib.baomitu.com/aplayer/latest/APlayer.min.css
   meting: true
-  meting_cdn: https://pf.wuniutech.com/kari/files/-/lib/meting_1/Meting.min.js
+  meting_cdn: https://npm.elemecdn.com/meting@1/dist/Meting.min.js
 
 live2d:
-  enable: true
+  enable: false
   # 推荐使用 jsdelivr 的 CDN 来加载
   # scriptFrom: jsdelivr
-  scriptFrom: https://pf.wuniutech.com/kari/files/-/lib/live2d-widget/lib/L2Dwidget.min.js
+  scriptFrom: https://code.bdstatic.com/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js
   pluginRootPath: live2dw/
   pluginJsPath: lib/
   pluginModelPath: assets/

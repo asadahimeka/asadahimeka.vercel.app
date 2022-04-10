@@ -39,7 +39,8 @@ favicon: /images/favicon.ico
 
 preconnect:
   - https://lib.baomitu.com
-  - https://pf.wuniutech.com
+  - https://code.bdstatic.com
+  - https://npm.elemecdn.com
 
 js:
   - /custom/custom.js
@@ -451,8 +452,8 @@ anonymous_image: https://upload-bbs.mihoyo.com/upload/2022/04/05/260511332/20356
 # cdn for third-party library (always include)
 cdn:
   css:
-    yun-markdown-css: https://pf.wuniutech.com/kari/files/-/lib/star-markdown-css_0.2.4/yun-markdown.min.css
-    prism-theme-vars: https://pf.wuniutech.com/kari/files/-/lib/prism-theme-vars/base.css
+    yun-markdown-css: https://npm.elemecdn.com/star-markdown-css@0.2.4/dist/yun/yun-markdown.min.css
+    prism-theme-vars: https://npm.elemecdn.com/prism-theme-vars/base.css
 
 # cdn for third-party library (alternative include)
 # please see in _vendors.yml
@@ -471,13 +472,13 @@ vendors:
   aplayer:
     css: https://lib.baomitu.com/aplayer/1.9.1/APlayer.min.css
     js: https://lib.baomitu.com/aplayer/1.9.1/APlayer.min.js
-    meting: https://pf.wuniutech.com/kari/files/-/lib/meting_1/Meting.min.js
+    meting: https://npm.elemecdn.com/meting@1/dist/Meting.min.js
   mermaid: https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js
   trianglify: https://lib.baomitu.com/trianglify/3.0.0/trianglify.min.js
   lightgallery:
     css: https://lib.baomitu.com/lightgallery-js/1.4.0/css/lightgallery.min.css
     js: https://lib.baomitu.com/lightgallery-js/1.4.0/js/lightgallery.min.js
-  pjax: https://pf.wuniutech.com/kari/files/-/lib/pjax/pjax.min.js
+  pjax: https://npm.elemecdn.com/pjax@latest/pjax.min.js
   crypto_js:
     all: https://lib.baomitu.com/crypto-js/4.1.1/crypto-js.min.js
   wordcloud: https://lib.baomitu.com/wordcloud2.js/1.2.2/wordcloud2.min.js
@@ -491,7 +492,7 @@ vendors:
         js: https://lib.baomitu.com/reveal.js/4.3.1/plugin/highlight/highlight.min.js
         monokai: https://lib.baomitu.com/reveal.js/4.3.1/plugin/highlight/monokai.min.css
   vue: https://lib.baomitu.com/vue/2.6.14/vue.min.js
-  darken: https://pf.wuniutech.com/kari/files/-/lib/darken_1.5.0/darken.js
+  darken: https://code.bdstatic.com/npm/darken@1.5.0/dist/darken.umd.js
 
   # comment
   valine_js: https://cdn.staticfile.org/valine/1.4.18/Valine.min.js
@@ -505,8 +506,8 @@ vendors:
   iconify: https://code.iconify.design/2/2.1.1/iconify.min.js
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
   unocss:
-    runtime: https://pf.wuniutech.com/kari/files/-/lib/unocss/runtime.js
-    core: https://pf.wuniutech.com/kari/files/-/lib/unocss/core.global.js
-    uno: https://pf.wuniutech.com/kari/files/-/lib/unocss/uno.global.js
-    attributify: https://pf.wuniutech.com/kari/files/-/lib/unocss/attributify.global.js
-    mini: https://pf.wuniutech.com/kari/files/-/lib/unocss/mini.global.js
+    runtime: https://npm.elemecdn.com/@unocss/runtime
+    core: https://npm.elemecdn.com/@unocss/runtime/core.global.js
+    uno: https://npm.elemecdn.com/@unocss/runtime/uno.global.js
+    attributify: https://npm.elemecdn.com/@unocss/runtime/attributify.global.js
+    mini: https://npm.elemecdn.com/@unocss/runtime/mini.global.js
