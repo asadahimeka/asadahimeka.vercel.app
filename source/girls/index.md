@@ -1,7 +1,7 @@
 ---
 layout: girls
-title: Kawaii Girls
-icon: icon-women-line
+title: ' Kawaii Girls'
+icon: icon-favorite
 banner: <span title="我全都要！">誰でも大好き</span>
 random: true
 # girls:

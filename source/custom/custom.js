@@ -4,21 +4,24 @@
   if (location.href.includes('/posts')) {
     h.insertAdjacentHTML('beforeend', `
       <link rel="stylesheet" href="https://pf.wuniutech.com/kari/files/-/lib/fancybox/fancybox.css">
-      <style>.post-body img{cursor:zoom-in;}.fancybox__backdrop::after{content:"";position:absolute;width:10%;height:10%;filter:blur(2px);left:50%;top:50%;transform:scale(11);opacity:0.3;background-image:var(--bg-image);background-size:cover;background-repeat:no-repeat;background-position:center center;}.fancybox__container{--fancybox-bg:#000;--fancybox-thumbs-width:48px;--fancybox-thumbs-ratio:1;--carousel-button-bg:rgb(91 78 76 / 74%);--carousel-button-svg-width:24px;--carousel-button-svg-height:24px;--carousel-button-svg-stroke-width:2.5;}.fancybox__nav{--carousel-button-svg-width:24px;--carousel-button-svg-height:24px;}.fancybox__nav .carousel__button.is-prev{left:20px;}.fancybox__nav .carousel__button.is-next{right:20px;}.carousel__button.is-close{right:auto;top:20px;left:20px;}.fancybox__slide{padding:8px 88px;}.fancybox__thumbs .carousel__slide{padding:8px 8px 16px 8px;}.is-nav-selected::after{display:none;}.fancybox__thumb{border-radius:6px;opacity:0.4;}.fancybox__thumb:hover,.is-nav-selected .fancybox__thumb{border-radius:6px;opacity:1;}.is-nav-selected .fancybox__thumb::after{display:none;}.with-fancybox #live2d-widget{opacity:0!important}</style>
+      <style>.post-body img{cursor: zoom-in;}</style>
     `);
     const s = d.createElement('script');
     s.src = 'https://pf.wuniutech.com/kari/files/-/lib/fancybox/fancybox.umd.js';
     s.defer = true;
     h.appendChild(s);
   }
+  if (['/albums', '/girls', '/bangumi'].some(e => location.href.includes(e))) {
+    h.insertAdjacentHTML('beforeend', '<style>#live2d-widget{opacity:0!important}</style>');
+  }
+  if (location.href.includes('/bangumi')) {
+    h.insertAdjacentHTML('beforeend', '<style>.post-count{display:none}article#page{padding-top:0}</style>');
+  }
   const q = (sel, cb) => {
     const el = d.querySelector(sel);
     if (el) cb && cb(el);
   };
   w.addEventListener('load', () => {
-    if (['/albums', '/girls', '/bangumi'].some(e => location.href.includes(e))) {
-      q('#live2d-widget', el => { el.style.display = 'none'; });
-    }
     if (location.href.includes('/posts')) {
       q('.sidebar-nav', ul => {
         ul.insertAdjacentHTML('afterbegin', `
@@ -57,6 +60,27 @@
         }
       });
     }
+    q('.powered a[href^="https://hexo.io"]', el => {
+      el.insertAdjacentHTML('afterbegin', '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve" style="vertical-align: middle;margin-right: 4px"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"></path></svg>');
+    });
+    q('.powered a[href^="https://github.com/YunYouJun/hexo-theme-yun"]', el => {
+      el.insertAdjacentHTML('afterbegin', '<img src="https://www.yunyoujun.cn/yun.svg" alt="" style="height: 18px;vertical-align: middle;margin-right: 4px" loading="lazy">');
+    });
+    q('.links-item[href*="/girls/"]', el => {
+      el.innerHTML = '<img class="icon" style="border-radius:50%;" src="https://upload-bbs.mihoyo.com/upload/2022/04/09/260511332/336236120ae30af15a9643e45c6dc2dc_4356123477863484768.png" alt>'
+    });
+    if (location.href.includes('/bangumi')) {        
+      if (location.href.includes('/cinema')) {        
+        q('.bangumi-tabs', el => { 
+          el.insertAdjacentHTML('beforeend', '<a class="bangumi-tab" id="bangumi-tab4" href="./">追番</a>')
+        });
+      } else {
+        q('.bangumi-tabs', el => { 
+          el.insertAdjacentHTML('beforeend', '<a class="bangumi-tab" id="bangumi-tab4" href="./cinema">追剧</a>')
+        });
+      }
+    }
+
   });
 
   function yearDiff(dt1, dt2) {

@@ -212,6 +212,7 @@ html:not(.dark) #footer {
 #footer {
   margin-top: 0.5rem !important;
   padding-top: 0.5rem !important;
+  padding-bottom: 1rem !important;
 }
 
 #footer a {
@@ -258,6 +259,10 @@ html:not(.dark) .markdown-body code:not([class*="language-"]) {
   background-color: rgba(242, 113, 28, 0.1);
 }
 
+.markdown-body pre code {
+  line-height: 1.5;
+}
+
 .bangumi-picture img {
   max-width: 100%;
   max-height: 100%;
@@ -275,13 +280,6 @@ html:not(.dark) .markdown-body code:not([class*="language-"]) {
   padding: 0 20px;
 }
 
-.bangumi-info-items {
-  color: #00a1d6 !important;
-}
-
-.markdown-body pre code {
-  line-height: 1.5;
-}
 
 #live2d-widget {
   opacity: 0;
@@ -293,13 +291,121 @@ a,
 .heimu:hover,
 .hty-icon-button,
 #menu-btn {
-  cursor: url(/custom/cursors/link.cur),pointer;
+  cursor: url(/custom/cursors/link.cur), pointer;
 }
 
-input,textarea,p,pre,code,blockquote {
-  cursor: url(/custom/cursors/text.cur),auto;
+input,
+textarea,
+p,
+pre,
+code,
+blockquote {
+  cursor: url(/custom/cursors/text.cur), auto;
 }
 
 .photo-list-cover {
   cursor: zoom-in;
+}
+
+.bangumi-active {
+  color: white !important;
+  background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%) !important;
+  border-radius: 8px !important;
+  padding: 5px 8px !important;
+}
+
+.bangumi-active:hover::before {
+  width: 0 !important;
+}
+
+.bangumi-button:hover {
+  color: white !important;
+  background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%) !important;
+}
+
+/* .banner-line,
+.banner-char-container, */
+.girls-number {
+  display: none;
+}
+
+
+
+
+
+
+.fancybox__backdrop::after {
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  filter: blur(2px);
+  left: 50%;
+  top: 50%;
+  transform: scale(11);
+  opacity: 0.3;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.fancybox__container {
+  --fancybox-bg: #000;
+  --fancybox-thumbs-width: 48px;
+  --fancybox-thumbs-ratio: 1;
+  --carousel-button-bg: rgb(91 78 76 / 74%);
+  --carousel-button-svg-width: 24px;
+  --carousel-button-svg-height: 24px;
+  --carousel-button-svg-stroke-width: 2.5;
+}
+
+.fancybox__nav {
+  --carousel-button-svg-width: 24px;
+  --carousel-button-svg-height: 24px;
+}
+
+.fancybox__nav .carousel__button.is-prev {
+  left: 20px;
+}
+
+.fancybox__nav .carousel__button.is-next {
+  right: 20px;
+}
+
+.carousel__button.is-close {
+  right: auto;
+  top: 20px;
+  left: 20px;
+}
+
+.fancybox__slide {
+  padding: 8px 88px;
+}
+
+.fancybox__thumbs .carousel__slide {
+  padding: 8px 8px 16px 8px;
+}
+
+.is-nav-selected::after {
+  display: none;
+}
+
+.fancybox__thumb {
+  border-radius: 6px;
+  opacity: 0.4;
+}
+
+.fancybox__thumb:hover,
+.is-nav-selected .fancybox__thumb {
+  border-radius: 6px;
+  opacity: 1;
+}
+
+.is-nav-selected .fancybox__thumb::after {
+  display: none;
+}
+
+.with-fancybox #live2d-widget {
+  opacity: 0 !important
 }

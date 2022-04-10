@@ -8,7 +8,9 @@ subtitle: 'Fly to the sky.'
 description: '明日はきっと晴れるさ。'
 keywords:
 author: Sakura Yumine
-language: ja
+language:
+  - ja
+  - zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -230,13 +232,29 @@ live2d:
 
 bangumi:
   enable: true
+  source: bili
   path: bangumi/index.html
   vmid: 8051085
   title: 'Following Bangumi'
   quote: 'オッサンが番組見てて悪かったな！'
   show: 1
+  lazyload: true
   loading:
-  metaColor: #00a1d6
-  color:
+  metaColor: '#00a1d6'
+  color: '#222'
+  webp: true
+  progress: true
+
+cinema: # 追剧设置
+  enable: true
+  path: bangumi/cinema.html
+  vmid: 8051085
+  title: 'Following Cinema'
+  quote: '(o-ωｑ)).oO 困'
+  show: 1
+  lazyload: true
+  loading:
+  metaColor: '#00a1d6'
+  color: '#222'
   webp: true
   progress: true
