@@ -145,8 +145,8 @@ codeblock:
 
 # Extra links
 pages:
-  - name: Pixiv Illustration Collection
-    url: /pixivic/
+  - name: Pixiv Daily Rank
+    url: /pixiv/
     icon: icon-pixiv
     color:
   - name: My Bangumi List
