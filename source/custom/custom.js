@@ -28,7 +28,7 @@
       el.insertAdjacentHTML('afterbegin', '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve" style="vertical-align: middle;margin-right: 4px"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"></path></svg>');
     });
     q('.powered a[href^="https://github.com/YunYouJun/hexo-theme-yun"]', el => {
-      el.insertAdjacentHTML('afterbegin', '<img src="/yun.svg" alt="" style="height: 18px;vertical-align: middle;margin-right: 4px" loading="lazy">');
+      el.insertAdjacentHTML('afterbegin', '<img src="/yun.svg" alt="" style="height: 18px;vertical-align: middle;margin-right: 4px">');
     });
   }
 
@@ -72,6 +72,12 @@
   }
 
   function setFancyBox() {
+    q('#back-to-top', el => {
+      el.href = 'javascript:void(0);'
+      el.addEventListener('click', () => {
+        window.scrollTo(0, 0);
+      });
+    });
     if (location.href.includes('/posts')) {
       q('.sidebar-nav', ul => {
         ul.insertAdjacentHTML('afterbegin', '<li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" title="HOME" onclick="location=CONFIG.root"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></li>');

@@ -33,14 +33,11 @@
 .rank_container {
   height: 0;
   opacity: 0;
-  transform: translateY(110%) scale(0);
-  transition: 0.2s;
 }
 
 .rank_container.show {
   height: auto;
   opacity: 1;
-  transform: translateY(0) scale(1);
 }
 
 .rank_container h3 span {
@@ -58,9 +55,17 @@
   display: inline-block;
   vertical-align: top;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: .2s ease-in-out;
 }
 
-.demo-index {
+.demo[data-macy-complete="1"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.demo .demo-index {
   position: absolute;
   top: 0;
   left: 0;
@@ -74,4 +79,8 @@
 
 [x-cloak] {
   display: none !important;
+}
+ 
+.carousel__button {
+  margin: 0 2px;
 }
