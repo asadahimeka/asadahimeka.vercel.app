@@ -1,179 +1,117 @@
 <header class="post-header">
-  <h1 class="post-title" itemprop="name headline">Pixiv Daily Rank</h1>
+  <h1 class="post-title" itemprop="name headline">Pixiv Daily Ranking</h1>
 </header>
+<link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css">
 <script defer src="https://lib.baomitu.com/alpinejs/3.9.5/cdn.min.js"></script>
-<style>
-  #page {
-    margin: 0;
-  }
-
-  .hty-card>.post-header,
-  .post-meta {
-    display: none;
-  }
-
-  .post-body {
-    padding: 0;
-  }
-
-  #live2d-widget {
-    opacity: 0 !important;
-  }
-
-  img {
-    margin: 0 auto !important;
-    max-width: 100% !important;
-    max-height: unset !important;
-  }
-
-  img:hover {
-    transform: scale(1.2);
-  }
-
-  .pixiv_rank {
-    padding: 2em 0;
-  }
-
-  .rank_container {
-    opacity: 0;
-    transition: 0.2s;
-  }
-
-  .rank_container.show {
-    opacity: 1;
-  }
-
-  #macy-container {
-    width: 95%;
-    max-width: 1467px;
-    margin: 0 auto;
-  }
-
-  .demo {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    overflow: hidden;
-  }
-
-  .demo-index {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 28px;
-    height: 28px;
-    line-height: 28px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.4);
-    color: #fff;
-  }
-
-  [x-cloak] {
-    display: none !important;
-  }
-</style>
-
+<script defer src="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+<link rel="stylesheet" href="./style.css">
 <section id="pixiv_rank" x-cloak x-data="ranklist">
   <div class="spinner" x-show="loading"></div>
   <div class="rank_container" :class="{show:!loading}">
-    <h3 style="margin-top:5px;text-align:center" x-text="rankDay"></h3>
+    <h3 style="margin-top:5px;text-align:center">
+      <span x-text="rankDay"></span>
+      <span><a href="https://pixiv.moe/" target="_blank" rel="nofollow noreferrer">pixiv萌え</a></span>
+      <span><a href="https://pixivic.com/" target="_blank" rel="nofollow noreferrer">pixivic</a></span>
+    </h3>
     <div id="macy-container">
-      <template x-for="(item,index) in list" :key="item.url">
-        <div class="demo">
-          <img :src="item.image" alt="" class="demo-image">
+      <template x-for="(item,index) in list" :key="index">
+        <div class="demo" data-fancybox="gallery" :data-src="item.url">
+          <img class="demo-image" :src="item.image" loading="lazy" alt>
           <div class="demo-index" x-text="index+1"></div>
         </div>
       </template>
     </div>
   </div>
+  <template x-if="showPixivic">
+    <iframe src="https://pixivic.com/" frameborder="0" style="width: 100%;height: 86vh;margin-top: 1rem"></iframe>
+  </template>
 </section>
 <script src="https://lib.baomitu.com/macy/2.5.1/macy.min.js"></script>
 <script>
-  document.addEventListener('alpine:init', () => {
-    Alpine.data('ranklist', () => ({
-      list: [],
-      rankDay: '',
-      loading: true,
-      init: function () {
-        getPixivDailyRank().then(res => {
-          this.rankDay = res.date;
-          this.list = res.list;
-          this.$nextTick(() => {
-            initMacy().then(() => {
-              this.loading = false;
+  (function () {
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('ranklist', () => ({
+        list: [],
+        rankDay: '',
+        showPixivic: false,
+        loading: true,
+        init: function () {
+          getPixivDailyRank().then(res => {
+            this.rankDay = res.date;
+            this.list = res.list;
+            this.$nextTick(() => {
+              setTimeout(() => {
+                initMacy();
+                bindFancybox();
+                this.loading = false;
+                ScrollReveal().reveal('.demo-image');
+              }, 200);
             });
+          }).catch((err) => {
+            this.loading = false;
+            this.showPixivic = true;
           });
-        }).catch((err) => {
-          this.loading = false;
-          showPixivic();
-        });
-      }
-    }));
-  });
-
-  function getPixivDailyRank() {
-    const today = new Date().toLocaleDateString('zh').replace(/\//g, '_');
-    return fetch('https://pf.wuniutech.com/kari/pixiv_daily_rank?' + today)
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        } else {
-          throw new Error('Resp not ok.');
         }
-      })
-      .then(res => {
-        if (res.url.length > 0) {
-          const list = res.url.map((e, i) => ({
-            image: res.image[i],
-            url: 'https://pixiv.re/' + e.split('/').pop() + '.png'
-          }));
-          return { list: list, date: res.date };
-        } else {
-          throw new Error('Empty list.');
-        }
-      })
-      .catch(_ => {
-        throw new Error('Network error.');
-      })
-  }
+      }));
+    });
 
-  function initMacy() {
-    return new Promise(resolve => {
+    function bindFancybox() {
+      Fancybox.bind('[data-fancybox]', {
+        on: {
+          initCarousel: fancybox => {
+            const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+            fancybox.$container.style.setProperty('--bg-image', `url("${slide.$thumb.src}")`);
+          },
+          'Carousel.change': (fancybox, carousel, to, from) => {
+            const slide = carousel.slides[to];
+            fancybox.$container.style.setProperty('--bg-image', `url("${slide.$thumb.src}")`);
+          }
+        }
+      });
+    }
+
+    function getPixivDailyRank() {
+      const today = new Date().toLocaleDateString('zh').replace(/\//g, '_');
+      return fetch('https://pf.wuniutech.com/kari/pixiv_daily_rank?' + today)
+        .then(res => {
+          if (res.ok) {
+            return res.json();
+          } else {
+            throw new Error('Resp not ok.');
+          }
+        })
+        .then(res => {
+          if (res.url.length > 0) {
+            const list = res.url.map((e, i) => {
+              const pid = e.split('/').pop()
+              return {
+                image: res.image[i],
+                url: buildSrc(pid)
+              }
+            });
+            return { list: list, date: res.date };
+          } else {
+            throw new Error('Empty list.');
+          }
+        })
+        .catch(_ => {
+          throw new Error('Network error.');
+        })
+    }
+
+    function buildSrc(pid) {
+      return 'https://pixiv.re/' + pid + '.png'
+    }
+
+    function initMacy() {
       const macyInstance = new Macy({
         container: '#macy-container',
         trueOrder: false,
-        waitForImages: true,
+        waitForImages: false,
         columns: 6,
         margin: 16,
-        breakAt: {
-          1600: 4,
-          1200: 3,
-          500: 2
-        },
+        breakAt: { 1600: 4, 1200: 3, 500: 2 },
       });
-      macyInstance.on(macyInstance.constants.EVENT_IMAGE_COMPLETE, ctx => {
-        resolve(ctx);
-      });
-    })
-  }
-
-  function showPixivic() {
-    hide('#pixiv_rank');
-    q('.post-content', el => {
-      el.insertAdjacentHTML('beforeend', '<iframe src="https://pixivic.com/" frameborder="0" style="width: 100%;height: 86vh;margin-top: 1rem"></iframe>')
-    })
-  }
-
-  function q(sel, cb) {
-    const el = document.querySelector(sel);
-    el && cb && cb(el);
-  }
-
-  function show(sel) {
-    q(sel, el => el.style.display = 'block');
-  }
-
-  function hide(sel) {
-    q(sel, el => el.style.display = 'none');
-  }
+    }
+  })();
 </script>
