@@ -254,7 +254,7 @@ banner:
   enable: true
   # title: 嬿暶璃琦
   # title: ['Hi','me','ka','na']
-  title: ヒメカナ
+  title: ヒメカナのサイト
   border: true
   cloud:
     enable: true
