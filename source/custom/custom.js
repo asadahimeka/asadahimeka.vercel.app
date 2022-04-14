@@ -72,8 +72,10 @@
   }
 
   function setFancyBox() {
+    q('.site-author-name a', el => { el.title = '关于'; });
+    q('.site-name', el => { el.title = '关于站点'; });
     q('#back-to-top', el => {
-      el.href = 'javascript:void(0);'
+      el.href = 'javascript:void(0);';
       el.addEventListener('click', () => {
         window.scrollTo(0, 0);
       });
