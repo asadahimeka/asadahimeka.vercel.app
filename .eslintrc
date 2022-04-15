@@ -4,6 +4,9 @@
     "es6": true,
     "node": true
   },
+  "globals": {
+    "hexo":"readonly"
+  },
   "extends": "hexo",
   "rules": {
     "quotes": ["warn", "single"],

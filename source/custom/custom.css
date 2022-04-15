@@ -411,3 +411,11 @@ blockquote {
 .with-fancybox #live2d-widget {
   opacity: 0 !important;
 }
+
+.dark #yun-logo {
+  stroke: white;
+}
+
+.dark #vercel-logo {
+  fill: white !important;
+}

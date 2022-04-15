@@ -28,7 +28,7 @@
       el.insertAdjacentHTML('afterbegin', '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve" style="vertical-align: middle;margin-right: 4px"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"></path></svg>');
     });
     q('.powered a[href^="https://github.com/YunYouJun/hexo-theme-yun"]', el => {
-      el.insertAdjacentHTML('afterbegin', '<img src="/yun.svg" alt="" style="height: 18px;vertical-align: middle;margin-right: 4px">');
+      el.insertAdjacentHTML('afterbegin', '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="yun-logo" stroke="#000" width="18px" height="18px" viewBox="40 40 320 320" stroke-width="16" style="vertical-align: middle;margin-right: 4px"> <defs> <line id="eye" x1="0" y1="-35" x2="0" y2="35" stroke-linecap="round"> <animateTransform attributeName="transform" additive="sum" attributeType="XML" type="scale" from="1 1" to="1 0" dur="0.15s" repeatCount="2"/> </line> </defs> <polygon stroke-linejoin="round" fill="none" points="50,250 50,150 100,150 100,100 300,100 300,150 350,150 350,250 300,250 300,300 100,300 100,250 50,250"/> <use xlink:href="#eye" transform="translate(150,200)"/> <use xlink:href="#eye" transform="translate(250,200)"/></svg>');
     });
   }
 
