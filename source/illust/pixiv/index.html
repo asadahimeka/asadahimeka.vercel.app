@@ -1,9 +1,100 @@
 <header class="post-header">
   <h1 class="post-title" itemprop="name headline">Pixiv Daily Ranking</h1>
 </header>
-<link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css">
-<link rel="stylesheet" href="./style.css">
 <script>document.title = 'Pixiv Daily Ranking';</script>
+<link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css">
+<style>
+  #page {
+    margin: 0;
+  }
+
+  article#page {
+    padding-top: 0;
+  }
+
+  .hty-card>.post-header,
+  .post-meta {
+    display: none;
+  }
+
+  .post-body {
+    padding: 0;
+  }
+
+  #live2d-widget {
+    opacity: 0 !important;
+  }
+
+  .rank_container img {
+    cursor: zoom-in;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    max-height: unset !important;
+  }
+
+  .rank_container img:hover {
+    transform: scale(1.2);
+  }
+
+  .pixiv_rank {
+    padding: 2em 0;
+  }
+
+  .rank_container {
+    height: 0;
+    opacity: 0;
+  }
+
+  .rank_container.show {
+    height: auto;
+    opacity: 1;
+  }
+
+  .rank_container h3 span {
+    margin: 0 8px;
+  }
+
+  #macy-container {
+    width: 95%;
+    max-width: 1467px;
+    margin: 0 auto;
+  }
+
+  .demo {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: .2s ease-in-out;
+  }
+
+  .demo[data-macy-complete="1"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .demo .demo-index {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+  }
+
+  [x-cloak] {
+    display: none !important;
+  }
+
+  .carousel__button {
+    margin: 0 2px;
+  }
+</style>
 <script defer src="https://lib.baomitu.com/alpinejs/3.9.5/cdn.min.js"></script>
 <section id="pixiv_rank" x-cloak x-data="ranklist">
   <div class="spinner" x-show="loading"></div>
@@ -26,7 +117,8 @@
     </div>
   </div>
   <template x-if="showPixivic">
-    <iframe src="https://www.vilipix.com/ranking" frameborder="0" style="width: 100%;height: 86vh;margin-top: 1rem"></iframe>
+    <iframe src="https://www.vilipix.com/ranking" frameborder="0"
+      style="width: 100%;height: 86vh;margin-top: 1rem"></iframe>
   </template>
 </section>
 <script src="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
