@@ -67,11 +67,16 @@ h4 {
   margin: 15px 0;
 }
 
+:root {
+  /* 瑠璃 */
+  --blockquote-border-left-color: rgb(0, 92, 175);
+  --blockquote-bg-color: rgba(0, 92, 175, 0.05);
+}
+
 blockquote {
   margin: 2em 0;
   padding-left: 30px;
-  /* 藤紫 */
-  border-left: 10px solid #8A6BBE;
+  border-left-width: 10px !important;
 }
 
 p {
@@ -147,11 +152,6 @@ a:hover {
 .markdown-body a:focus,
 .markdown-body a:hover {
   color: #f92672;
-}
-
-.markdown-body blockquote {
-  /* 紅碧 */
-  border-left: 10px solid #7B90D2;
 }
 
 .tag-item .icon,

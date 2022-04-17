@@ -3,14 +3,17 @@
 </header>
 <link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css">
 <link rel="stylesheet" href="./style.css">
+<script>document.title = 'Pixiv Daily Ranking';</script>
 <script defer src="https://lib.baomitu.com/alpinejs/3.9.5/cdn.min.js"></script>
 <section id="pixiv_rank" x-cloak x-data="ranklist">
   <div class="spinner" x-show="loading"></div>
   <div class="rank_container" :class="{show:!loading}">
     <h3 style="margin-top:5px;text-align:center">
       <span x-text="rankDay"></span>
-      <span><a href="https://pixiv.moe/" target="_blank" rel="nofollow noreferrer">pixiv萌え</a></span>
+      <span><a href="https://pixiv.moe/" target="_blank" rel="nofollow noreferrer">pixivmoe</a></span>
       <span><a href="https://pixivic.com/" target="_blank" rel="nofollow noreferrer">pixivic</a></span>
+      <span><a href=" https://www.vilipix.com/" target="_blank" rel="nofollow noreferrer">vilipix</a></span>
+      <span><a href="https://pixivel.moe/" target="_blank" rel="nofollow noreferrer">pixivel</a></span>
     </h3>
     <div id="macy-container">
       <template x-for="(item,index) in list" :key="index">
@@ -23,7 +26,7 @@
     </div>
   </div>
   <template x-if="showPixivic">
-    <iframe src="https://pixivic.com/" frameborder="0" style="width: 100%;height: 86vh;margin-top: 1rem"></iframe>
+    <iframe src="https://www.vilipix.com/ranking" frameborder="0" style="width: 100%;height: 86vh;margin-top: 1rem"></iframe>
   </template>
 </section>
 <script src="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>

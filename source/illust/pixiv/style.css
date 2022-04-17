@@ -2,6 +2,10 @@
   margin: 0;
 }
 
+article#page {
+  padding-top: 0;
+}
+
 .hty-card>.post-header,
 .post-meta {
   display: none;
@@ -80,7 +84,7 @@
 [x-cloak] {
   display: none !important;
 }
- 
+
 .carousel__button {
   margin: 0 2px;
 }

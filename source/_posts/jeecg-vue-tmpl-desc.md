@@ -10,6 +10,12 @@ date: 2021-06-08 15:31:45
 updated: 2021-06-08 15:31:45
 ---
 
+<div class="warning">
+
+> Deprecated. 请使用官方最新版本。
+
+</div>
+
 Jeecg-vue-tmpl 修改自原版 JeecgBoot 前端项目，根据自身需求进行若干修改，如果有其它需求，比如使用 online 开发功能，建议直接拉取官方代码自行修改，此自用项目模板维护至 2.4.2 版本不再更新。
 <!-- more -->
 
@@ -89,7 +95,7 @@ Jeecg-vue-tmpl 修改自原版 JeecgBoot 前端项目，根据自身需求进行
    # [暂不可用] 是否需要错误上报（钉钉机器人提醒）
    VUE_APP_NEED_REPO = 'no'
    ```
-   
+
 10. 配置 eslint 规则，主要使用 eslint 官方推荐规则、vue 官方推荐规则与 standard 规则，并忽略部分难以修改的 jeecg 代码
 
 11. 修改 `vue.config.js` 配置文件
@@ -104,17 +110,17 @@ Jeecg-vue-tmpl 修改自原版 JeecgBoot 前端项目，根据自身需求进行
         config.plugins.push(new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn/))
        },
       ```
-      
+
     - 配置 svg loader
-    
+
     - 打包文件优化，合并小文件
-    
+
     - 配置 gzip 压缩，提高加载速度
-    
+
     - 修改 ant-design-vue 主题色
-    
+
     - 配置开发环境代理
-    
+
 12. 添加 tinymce powepaste 插件，修改皮肤文件结构
 
 13. 将一些在线图标改为本地图标，置于 `public/default` 文件夹下
@@ -143,7 +149,7 @@ Jeecg-vue-tmpl 修改自原版 JeecgBoot 前端项目，根据自身需求进行
 
 25. 修改 tinymce 富文本编辑器组件 `JEditor` 为如下效果
     ![tinymce](https://gitee.com/asadahimeka/withpic/raw/as/images/tinymce-ss.png)
-    
+
 26. 添加时间选择组件 `JTime`
 
 27. 添加上传按钮组件 `JUploadBtn` 、拖拽上传图片组件 `JUploadImageD`
