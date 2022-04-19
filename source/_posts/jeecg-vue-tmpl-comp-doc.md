@@ -10,12 +10,6 @@ date: 2021-06-08 19:22:56
 updated: 2021-06-08 19:22:56
 ---
 
-<div class="warning">
-
-> Deprecated. 请使用官方最新版本。
-
-</div>
-
 JeecgBoot 前端初始项目 改 自用文档
 
 <!-- more -->
@@ -204,11 +198,11 @@ export default {
 - 字符串可选类型有 select / date / select2 / daterange / num / numrange / input / custom
 
    - 选 select 时需传入数据字典 code， 如`['select', 'sex']`
-
-   - 选 select2 时需传入下拉选择项列表，如 `['字段 1', 'name', 'select2', null, { _fOptions: this.someOptions }] `，
+   
+   - 选 select2 时需传入下拉选择项列表，如 `['字段 1', 'name', 'select2', null, { _fOptions: this.someOptions }] `， 
 下拉列表数据需遵循如 `[{ label: 'label', value: 'value' }]` 格式
-
-   - 对于其他类型可在组件源码中自行加入，或使用 custom 类型
+   
+   - 对于其他类型可在组件源码中自行加入，或使用 custom 类型   
      如： `['字段 1', 'name', 'custom', null, { _fSlotName: 'slotName' }]`
      模板中 :
      ```html
@@ -345,7 +339,7 @@ export default {
 ### checkPermission 检查数据权限
 
 ```typescript
-// value：数据权限标识
+// value：数据权限标识 
 export function checkPermission(value: string): boolean
 ```
 
