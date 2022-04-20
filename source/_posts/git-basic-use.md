@@ -3,7 +3,7 @@ title: Git 的基本使用
 abbrlink: f1f3f3e5
 date: 2019-06-06 00:00:00
 updated: 2022-04-19 00:00:00
-tags:
+tags: Git
 categories:
 ---
 
@@ -11,7 +11,7 @@ categories:
 
 <!-- more -->
 
-<style>#live2d,.warning-outdate,.post-time,footer,.post-nav,.sidebar-nav-item[title=HOME],.sidebar-nav-item[title="站点概览"]{display:none!important}.sidebar{background-size:0!important;}.fireworks{opacity:0!important;}*{cursor:auto!important;}</style>
+<style>.warning-outdate,.post-time,footer,.post-nav,.sidebar-nav-item[title=HOME],.sidebar-nav-item[title="站点概览"]{display:none!important}.sidebar{background-size:0!important;}#live2d,.fireworks{opacity:0!important;}*{cursor:auto!important;}</style>
 
 ## 软件下载
 
