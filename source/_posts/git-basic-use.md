@@ -133,10 +133,7 @@ categories:
 
 ## 常用命令
 
-<figure>
-<img src="https://upload-bbs.mihoyo.com/upload/2022/04/19/260511332/3bc9d5f2c49a713c776e69676d7d56c5_5255755117711546545.png" alt="gitcmds">
-<figcaption style="text-align:center">常用的6个命令，图片来自 www.ruanyifeng.com</figcaption>
-</figure>
+![gitcmds](https://upload-bbs.mihoyo.com/upload/2022/04/19/260511332/3bc9d5f2c49a713c776e69676d7d56c5_5255755117711546545.png)_常用的6个命令，图片来自 www.ruanyifeng.com_
 
 ### 初始化/克隆仓库
 
