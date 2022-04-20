@@ -11,7 +11,7 @@ categories:
 
 <!-- more -->
 
-<style>.warning-outdate,.post-time,footer,.post-nav,.sidebar-nav-item[title=HOME],.sidebar-nav-item[title="站点概览"]{display:none!important}.sidebar{background-size:0!important;}#live2d,.fireworks{opacity:0!important;}*{cursor:auto!important;}</style>
+<style>.warning-outdate,.post-time,.post-classify,footer,.post-nav,.sidebar-nav-item[title=HOME],.sidebar-nav-item[title="站点概览"]{display:none!important}.sidebar{background-size:0!important;}#live2d,.fireworks{opacity:0!important;}*{cursor:auto!important;}</style>
 
 ## 软件下载
 
