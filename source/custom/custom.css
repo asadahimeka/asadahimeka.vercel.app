@@ -124,6 +124,10 @@ a:hover {
   border-bottom: 1px solid var(--smc-header-bottom-color);
 }
 
+.markdown-body kbd {
+  padding: 6px;
+}
+
 .post-toc ol .toc-link,
 .markdown-body a {
   /* 藤紫 */
