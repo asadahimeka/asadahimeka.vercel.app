@@ -55,7 +55,7 @@ Windows Registry Editor Version 5.00
 
 https://www.zhihu.com/question/373189177
 
-https://stackoverflow.com/questions/32669805/why-my-ts-file-get-saved-as-mpeg2-ts-format-when-i-want-it-to-be-saved-as-types
+https://stackoverflow.com/questions/32669805
 
 ---
 *fin.*
