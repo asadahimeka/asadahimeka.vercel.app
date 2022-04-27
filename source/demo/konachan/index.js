@@ -238,6 +238,8 @@
       }
     },
     async mounted() {
+      const loadingEl = document.querySelector('#loading');
+      if (loadingEl) loadingEl.style.display = 'none';
       this.changeThemeDark();
       window.addEventListener('storage', () => {
         this.changeThemeDark();
