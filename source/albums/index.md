@@ -16,20 +16,20 @@ albums:
     url: /albums/shashin.html
     cover: https://gitee.com/asadahimeka/withpic/raw/as/images/white-abstract-background_23-2148810113.jpg
     desc: 请使用魔法上网
-  - caption: 夕阳西下
-    url: /albums/sunset.html
-    cover: https://picsum.photos/400/300?random
-    desc: 我想起那天夕阳下的奔跑
-  - caption: 青春
-    url: /albums/young.html
-    cover: https://picsum.photos/510/300?random
-    desc: 那是我逝去的青春
-  - caption: 日常
-    url: /albums/daily.html
-    cover: https://picsum.photos/800/300?random
-    desc: 我们一日日度过的所谓日常
-  - caption: 奇迹
-    url: /albums/miracle.html
-    cover: https://picsum.photos/600/200?random
-    desc: 实际上可能是接连不断的奇迹
+  # - caption: 夕阳西下
+  #   url: /albums/sunset.html
+  #   cover: https://picsum.photos/400/300?random
+  #   desc: 我想起那天夕阳下的奔跑
+  # - caption: 青春
+  #   url: /albums/young.html
+  #   cover: https://picsum.photos/510/300?random
+  #   desc: 那是我逝去的青春
+  # - caption: 日常
+  #   url: /albums/daily.html
+  #   cover: https://picsum.photos/800/300?random
+  #   desc: 我们一日日度过的所谓日常
+  # - caption: 奇迹
+  #   url: /albums/miracle.html
+  #   cover: https://picsum.photos/600/200?random
+  #   desc: 实际上可能是接连不断的奇迹
 ---
