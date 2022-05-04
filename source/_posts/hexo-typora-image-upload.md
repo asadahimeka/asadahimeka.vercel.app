@@ -76,7 +76,7 @@ PicGo 可以点击下载按钮到浏览器下载，安装完成后配置好图�
 >
 > ![img](https://pic.rmb.bdstatic.com/bjh/events/f88f55737ac44d0cd193fbd103ca09d1.png)
 
-## REF
+## Reference
 
 [typora + hexo 博客中插入图片](https://blog.csdn.net/qq_32623363/article/details/100524856)
 

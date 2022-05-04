@@ -1,9 +1,13 @@
 ---
 title: 使用 Vite 插件开发构建 Tampermonkey 用户脚本
 description: ⚡工程化、模块化与更舒服的用户脚本开发方式，显著提升开发体验
+tags:
+  - Vite
+  - Tampermonkey
+  - Userscript
+abbrlink: 3a8bdf22
 date: 2022-04-23 15:56:26
 updated: 2022-04-23 15:56:26
-tags: [Vite, Tampermonkey, Userscript]
 categories:
 ---
 
@@ -191,7 +195,7 @@ return {
 
 `npm run dev` 或 `yarn dev` 运行开发服务，然后点击下图所示链接安装
 
-![图 2](https://dd-static.jd.com/ddimg/jfs/t1/82883/5/17839/12465/626cfcc4E2842815c/5134caeba8dc9509.png)
+![图 6](https://dd-static.jd.com/ddimg/jfs/t1/82883/5/17839/12465/626cfcc4E2842815c/5134caeba8dc9509.png)
 
 ## 生产打包
 

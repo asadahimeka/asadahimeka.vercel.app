@@ -158,7 +158,7 @@ Vue.http.interceptors.push(function(request, next) {
 
 整个项目从基本构建到 vue-router 插件到 vue-resource 已经可以实现整个项目的架构了，Vuex 在这里不适用也不做介绍，后期有机会将新增分享。接下来我将就项目中某些具体的功能实现和一些 Vue 的使用技巧上做一些分享。
 
-## REF
+## Reference
 
 参考文章：http://www.cnblogs.com/keepfool/p/5657065.html
 ————————————————

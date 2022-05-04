@@ -500,7 +500,7 @@ $ gitmoji -u
 - **Scope prompt**: 启用或禁用 [conventional commits scope prompt](https://www.conventionalcommits.org/en/v1.0.0/#summary).
 - **Signed commits**: 是否使用 GPG 签名提交
 
-## REF
+## Reference
 
 [gitmoji](https://gitmoji.dev/)
 

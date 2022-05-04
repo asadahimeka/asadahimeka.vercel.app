@@ -1,8 +1,9 @@
 ---
 title: 让 Windows 把 TypeScript 文件当作文本文件
+tags: TypeScript
+abbrlink: 47c73f2e
 date: 2022-04-24 15:57:09
 updated: 2022-04-24 15:57:09
-tags: TypeScript
 categories:
 ---
 
@@ -51,7 +52,7 @@ Windows Registry Editor Version 5.00
 
 对于修改注册表之前已存在的项目文件，需要右键项目文件夹点击 `属性`，然后选择 `自定义` 页面，将 `优化此文件夹` 选择为 `常规项目`，并将下方的 `把此模板应用到所有子文件夹` 勾选上，然后确定即可。
 
-## Ref
+## Reference
 
 https://www.zhihu.com/question/373189177
 

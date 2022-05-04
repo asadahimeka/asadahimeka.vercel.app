@@ -390,7 +390,7 @@ RxJS 引入了 Observables （可观察对象），一个全新的 "推" 体系�
 
 ![PullPush](https://upload-bbs.mihoyo.com/upload/2022/04/05/260511332/453964c7c356cd70a02c3c860bce5051_4555920067121677757.jpg)
 
-## REF
+## Reference
 
 [Observer Pattern 课件 - 刘伟 (CSU)](http://blog.csdn.net/lovelion/article/details/7862349)
 

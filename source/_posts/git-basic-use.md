@@ -427,7 +427,7 @@ $ git stash pop
 $ git archive
 ```
 
-## Ref
+## Reference
 
 https://confluence.atlassian.com/get-started-with-sourcetree/get-started-with-sourcetree-847359026.html
 
