@@ -1,5 +1,5 @@
 ---
-title: 让 Windows 把 TypeScript 文件当作文本文件
+title: 如何让 Windows 把 TypeScript 文件当作文本文件
 tags: TypeScript
 abbrlink: 47c73f2e
 date: 2022-04-24 15:57:09
