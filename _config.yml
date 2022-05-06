@@ -260,3 +260,10 @@ cinema: # 追剧设置
   color: '#222'
   webp: true
   progress: true
+
+nofollow:
+  enable: false
+  field: site
+  # exclude:
+  #   - 'exclude1.com'
+  #   - 'exclude2.com'
