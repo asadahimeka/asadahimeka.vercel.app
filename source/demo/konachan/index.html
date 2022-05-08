@@ -139,10 +139,12 @@
         </v-list-item>
         <v-divider></v-divider>
         <v-list dense nav>
-          <v-list-item-content>
-            <v-list-item-title class="title">About</v-list-item-title>
-            <v-list-item-subtitle></v-list-item-subtitle>
-          </v-list-item-content>
+          <v-list-item>
+            <v-list-item-content>
+              <v-list-item-title class="title">About</v-list-item-title>
+              <v-list-item-subtitle></v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
           <v-list-item link
             @click="window.open('https://github.com/coderzhaoziwei/yande-re-chinese-patch','_blank','noreferrer')">
             <v-list-item-icon class="mr-2">
@@ -178,6 +180,8 @@
             </v-card>
           </masonry>
           <div class="d-flex justify-center">
+            <v-btn v-show="requestState" color="#ee8888" text>加载中...</v-btn>
+            <v-btn v-show="!requestState&&!requestStop" color="#ee8888" text @click="fetchData()">加载更多</v-btn>
             <v-btn v-show="!requestState&&requestStop" color="#ee8888" text>下面没有了...</v-btn>
           </div>
           <v-fab-transition>
@@ -191,7 +195,7 @@
               @click="showImageInfo=!showImageInfo;">
               <v-toolbar v-show="showImageInfo" flat color="transparent">
                 <v-chip-group class="hidden-sm-and-down" column>
-                  <v-chip v-for="tag in imageSelected.tagsArr" :key="tag" class="mr-1" small color="#ee8888" text-color="#ffffff"
+                  <v-chip v-for="tag in imageSelected.tagsArr" :key="tag" class="mr-1" small color="#ee8888b3" text-color="#ffffff"
                     v-text="tag" @click.stop="window.open('https://konachan.com/post?tags='+tag,'_blank','noreferrer')">
                   </v-chip>
                 </v-chip-group>
@@ -203,7 +207,7 @@
                       <v-icon>mdi-link-variant</v-icon>
                     </v-btn>
                   </template>
-                  <span v-text="'本站链接 https://konachan.net/post/show/' + imageSelected.id"></span>
+                  <span v-text="'详情 https://konachan.net/post/show/' + imageSelected.id"></span>
                 </v-tooltip>
                 <v-tooltip v-if="imageSelected.sourceUrl !== ''" bottom>
                   <template v-slot:activator="{ on, attrs }">
@@ -212,7 +216,7 @@
                       <v-icon>mdi-launch</v-icon>
                     </v-btn>
                   </template>
-                  <span v-text="'来源链接 ' + imageSelected.sourceUrl"></span>
+                  <span v-text="'来源 ' + imageSelected.sourceUrl"></span>
                 </v-tooltip>
                 <v-menu dense open-on-hover offset-y>
                   <template v-slot:activator="{ on, attrs }">
