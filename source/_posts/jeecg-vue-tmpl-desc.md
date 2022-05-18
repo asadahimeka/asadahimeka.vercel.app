@@ -89,7 +89,7 @@ Jeecg-vue-tmpl 修改自原版 JeecgBoot 前端项目，根据自身需求进行
    # [暂不可用] 是否需要错误上报（钉钉机器人提醒）
    VUE_APP_NEED_REPO = 'no'
    ```
-   
+
 10. 配置 eslint 规则，主要使用 eslint 官方推荐规则、vue 官方推荐规则与 standard 规则，并忽略部分难以修改的 jeecg 代码
 
 11. 修改 `vue.config.js` 配置文件
@@ -104,17 +104,17 @@ Jeecg-vue-tmpl 修改自原版 JeecgBoot 前端项目，根据自身需求进行
         config.plugins.push(new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn/))
        },
       ```
-      
+
     - 配置 svg loader
-    
+
     - 打包文件优化，合并小文件
-    
+
     - 配置 gzip 压缩，提高加载速度
-    
+
     - 修改 ant-design-vue 主题色
-    
+
     - 配置开发环境代理
-    
+
 12. 添加 tinymce powepaste 插件，修改皮肤文件结构
 
 13. 将一些在线图标改为本地图标，置于 `public/default` 文件夹下
@@ -142,8 +142,9 @@ Jeecg-vue-tmpl 修改自原版 JeecgBoot 前端项目，根据自身需求进行
 24. 按自身需求修改 `@/components/chart` 下的图表组件
 
 25. 修改 tinymce 富文本编辑器组件 `JEditor` 为如下效果
-    ![tinymce](https://gitee.com/asadahimeka/withpic/raw/as/images/tinymce-ss.png)
-    
+
+    ![tinymce](https://upload-bbs.mihoyo.com/upload/2022/05/18/260511332/e15872a1e2f258a86e9e3a5f029eba8e_8169569522840383566.png)
+
 26. 添加时间选择组件 `JTime`
 
 27. 添加上传按钮组件 `JUploadBtn` 、拖拽上传图片组件 `JUploadImageD`
@@ -166,17 +167,17 @@ Jeecg-vue-tmpl 修改自原版 JeecgBoot 前端项目，根据自身需求进行
 
 36. 于 `@/src/utils/dicts.js` 添加数据字典翻译函数 `transDict` 并且将其添加到过滤器
 
-37. 于 `@/src/utils/hasPermission.js `中添加当 `v-has` 指令不便使用时的替代函数： `checkPermission`
+38. 于 `@/src/utils/hasPermission.js `中添加当 `v-has` 指令不便使用时的替代函数： `checkPermission`
 
-38. 添加自用工具方法 `@/src/utils/index.js`
+39. 添加自用工具方法 `@/src/utils/index.js`
 
-39. 封装 axios : `@/src/utils/request.js`
+40. 封装 axios : `@/src/utils/request.js`
 
-40. 封装 localStorage、sessionStorage：`@/src/utils/storage.js`
+41. 封装 localStorage、sessionStorage：`@/src/utils/storage.js`
 
-41. `@/src/utils/validate.js` 中添加身份证号校验
+42. `@/src/utils/validate.js` 中添加身份证号校验
 
-42. layouts 移至 views 文件夹中
+43. layouts 移至 views 文件夹中
 
 ## 组件文档
 

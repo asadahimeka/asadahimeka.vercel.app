@@ -10,11 +10,11 @@ albums:
     desc: Anime Wallpaper Collection
   - caption: Camera
     url: /albums/camera.html
-    cover: https://gitee.com/asadahimeka/withpic/raw/as/images/IMG_20200801_194802.jpg
+    cover: https://pic.rmb.bdstatic.com/bjh/events/03c5136625d0bd9d64e9ef23c0cc2c4a.jpeg
     desc: 君がいた夏は 遠い夢の中
   - caption: Shashin
     url: /albums/shashin.html
-    cover: https://gitee.com/asadahimeka/withpic/raw/as/images/white-abstract-background_23-2148810113.jpg
+    cover: https://upload-bbs.mihoyo.com/upload/2022/05/18/260511332/26901ba1e338cd9a4283e3e4f28509cc_7210140052191554226.jpg
     desc: 请使用魔法上网
   # - caption: 夕阳西下
   #   url: /albums/sunset.html

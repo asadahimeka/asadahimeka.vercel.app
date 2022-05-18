@@ -19,13 +19,13 @@ categories:
 
 - 打开 AMD Radeon Software，点击右上角的设置图标，
 
-![open_ars_1](https://gitee.com/asadahimeka/withpic/raw/as/images/1bdkkancda.jpg)
+![open_ars_1](https://pic.rmb.bdstatic.com/bjh/events/ee8b87a4d57efc8a42ec8f232148ae48.jpeg)
 
-![open_ars_2](https://gitee.com/asadahimeka/withpic/raw/as/images/2cdjakxnsa.jpg)
+![open_ars_2](https://pic.rmb.bdstatic.com/bjh/events/5d09436a935aee025dd60fcd34185a25.jpeg)
 
 - 找到设置里的显示器选项，关掉显示选项里的 Vari-Bright。
 
-![disable_vari-bright](https://gitee.com/asadahimeka/withpic/raw/as/images/3djnslkadsa.jpg)
+![disable_vari-bright](https://pic.rmb.bdstatic.com/bjh/events/fca69fba1d4193ba3239a7bb9bec25d5.jpeg)
 
 感觉 AMD 的笔记本都可以通过这个办法来解决不插电源时屏幕暗的问题。
 
