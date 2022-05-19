@@ -336,8 +336,36 @@ blockquote {
   width: auto;
 }
 
+body:not(.is-home) .sidebar {
+  background-image: none;
+}
 
+.is-home .live2d {
+  left: unset;
+  right: -96px;
+  bottom: 40px;
+}
 
+html:not(.dark) ::placeholder {
+  color: grey;
+}
+
+.wl-emoji-popup button {
+  width: auto !important;
+  min-width: 2em;
+}
+.wl-tab-wrapper img[src^="https://img-static.mihoyo.com/communityweb/upload/"] {
+  width: 60px;
+  max-width: 60px;
+  min-height: 60px;
+}
+.wl-content img[src^="https://img-static.mihoyo.com/communityweb/upload/"] {
+  width: 60px;
+}
+.wl-emoji-popup .wl-tabs {
+  height: auto !important;
+  min-height: 2em;
+}
 
 
 .fancybox__backdrop::after {
