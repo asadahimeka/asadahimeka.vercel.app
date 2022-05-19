@@ -452,12 +452,12 @@ comment:
   tips:
     - 要不要和我说些什么？
   candidates:
-    # - giscus
+    - giscus
     - waline
 
 # https://giscus.app/zh-CN
 giscus:
-  enable: false
+  enable: true
   repo: asadahimeka/asadahimeka.vercel.app
   repo-id: R_kgDOHFcTmQ
   category: Announcements
