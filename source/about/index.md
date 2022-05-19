@@ -9,11 +9,11 @@ aplayer: true
 
 Nothing.
 
-{% meting "1811374816" "netease" "song" "theme:#C20C0C" %}
+{% meting "1476201398" "netease" "song" "theme:#C20C0C" %}
 
 <div style="display:flex;margin-top:30px">
-  <video muted autoplay loop src="https://gitee.com/asadahimeka/withpic/raw/as/videos/2.mp4" style="width:47%"></video>
-  <video muted autoplay loop src="https://gitee.com/asadahimeka/withpic/raw/as/videos/1.mp4" style="width:47%;margin-left:10px"></video>
+  <video muted autoplay loop src="https://himekana.coding.net/p/test/d/khn/git/raw/stk/as/v/2.mp4" style="width:47%"></video>
+  <video muted autoplay loop src="https://himekana.coding.net/p/test/d/khn/git/raw/stk/as/v/1.mp4" style="width:47%;margin-left:10px"></video>
 </div>
 
-![hh](https://gitee.com/asadahimeka/withpic/raw/as/images/1762918002.png)
+![hh](https://pic.rmb.bdstatic.com/bjh/events/1c90457d593d495d26080844ecb9ec7e.png)
