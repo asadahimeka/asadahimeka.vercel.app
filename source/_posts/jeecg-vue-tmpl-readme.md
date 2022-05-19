@@ -10,6 +10,12 @@ date: 2021-06-08 10:23:12
 updated: 2021-06-08 10:23:12
 ---
 
+<div class="warning">
+
+> Deprecated. 请使用官方最新版本。
+
+</div>
+
 JeecgBoot 前端初始项目
 
 <!-- more -->

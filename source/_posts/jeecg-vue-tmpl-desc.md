@@ -10,6 +10,12 @@ date: 2021-06-08 15:31:45
 updated: 2021-06-08 15:31:45
 ---
 
+<div class="warning">
+
+> Deprecated. 请使用官方最新版本。
+
+</div>
+
 Jeecg-vue-tmpl 修改自原版 JeecgBoot 前端项目，根据自身需求进行若干修改，如果有其它需求，比如使用 online 开发功能，建议直接拉取官方代码自行修改，此自用项目模板维护至 2.4.2 版本不再更新。
 <!-- more -->
 
@@ -142,7 +148,6 @@ Jeecg-vue-tmpl 修改自原版 JeecgBoot 前端项目，根据自身需求进行
 24. 按自身需求修改 `@/components/chart` 下的图表组件
 
 25. 修改 tinymce 富文本编辑器组件 `JEditor` 为如下效果
-
     ![tinymce](https://upload-bbs.mihoyo.com/upload/2022/05/18/260511332/e15872a1e2f258a86e9e3a5f029eba8e_8169569522840383566.png)
 
 26. 添加时间选择组件 `JTime`
@@ -167,17 +172,17 @@ Jeecg-vue-tmpl 修改自原版 JeecgBoot 前端项目，根据自身需求进行
 
 36. 于 `@/src/utils/dicts.js` 添加数据字典翻译函数 `transDict` 并且将其添加到过滤器
 
-38. 于 `@/src/utils/hasPermission.js `中添加当 `v-has` 指令不便使用时的替代函数： `checkPermission`
+37. 于 `@/src/utils/hasPermission.js `中添加当 `v-has` 指令不便使用时的替代函数： `checkPermission`
 
-39. 添加自用工具方法 `@/src/utils/index.js`
+38. 添加自用工具方法 `@/src/utils/index.js`
 
-40. 封装 axios : `@/src/utils/request.js`
+39. 封装 axios : `@/src/utils/request.js`
 
-41. 封装 localStorage、sessionStorage：`@/src/utils/storage.js`
+40. 封装 localStorage、sessionStorage：`@/src/utils/storage.js`
 
-42. `@/src/utils/validate.js` 中添加身份证号校验
+41. `@/src/utils/validate.js` 中添加身份证号校验
 
-43. layouts 移至 views 文件夹中
+42. layouts 移至 views 文件夹中
 
 ## 组件文档
 

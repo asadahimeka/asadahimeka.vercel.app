@@ -193,6 +193,12 @@
             :overlay-opacity="0.7">
             <v-img v-if="showImageSelected" :src="imageSelected.sampleUrl" :lazy-src="imageSelected.previewUrl"
               @click="showImageInfo=!showImageInfo;">
+              <template v-slot:placeholder>
+                <v-row v-if="imageSelected.isRatingS||(imageSelected.isRatingQ && showRatingQ)||(imageSelected.isRatingE && showRatingE)"
+                  class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular indeterminate :size="80" :width="6" color="#ee8888"></v-progress-circular>
+                </v-row>
+              </template>
               <v-toolbar v-show="showImageInfo" flat color="transparent">
                 <v-chip-group class="hidden-sm-and-down" column>
                   <v-chip v-for="tag in imageSelected.tagsArr" :key="tag" class="mr-1" small color="#ee8888b3" text-color="#ffffff"
