@@ -355,12 +355,14 @@ html:not(.dark) ::placeholder {
   min-width: 2em;
 }
 .wl-tab-wrapper img[src^="https://img-static.mihoyo.com/communityweb/upload/"] {
-  width: 60px;
-  max-width: 60px;
-  min-height: 60px;
+  width: 60px !important;
+  height: 60px !important;
+  max-width: 60px !important;
+  max-height: 60px !important;
 }
 .wl-content img[src^="https://img-static.mihoyo.com/communityweb/upload/"] {
   width: 60px;
+  height: 60px;
 }
 .wl-emoji-popup .wl-tabs {
   height: auto !important;

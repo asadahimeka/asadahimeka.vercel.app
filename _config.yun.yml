@@ -474,8 +474,6 @@ waline:
   visitor: true
   pageview: true
   comment: true # display comment count
-  locale:
-    placeholder: 填写邮箱，可以收到回复通知哦～
   requiredMeta: ["nick", "mail"]
   emoji:
     - https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/weibo/
@@ -601,8 +599,8 @@ vendors:
   valine_js: https://cdn.staticfile.org/valine/1.4.18/Valine.min.js
   waline_js: https://cdn.staticfile.org/waline/1.6.0/Waline.min.js
   waline:
-    css: "https://npm.elemecdn.com/@waline/client@v2/dist/waline.css"
-    js: "https://npm.elemecdn.com/@waline/client@v2/dist/waline.js"
+    css: https://cdn.staticfile.org/waline/2.5.0/waline.min.css
+    js: https://cdn.staticfile.org/waline/2.5.0/waline.min.js
   minivaline_js: https://npm.elemecdn.com/minivaline@6
   # https://github.com/SukkaW/DisqusJS
   disqusjs:
