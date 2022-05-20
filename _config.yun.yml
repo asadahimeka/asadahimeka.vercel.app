@@ -470,11 +470,13 @@ giscus:
 # https://waline.js.org/
 waline:
   enable: true
-  serverURL: https://119mf6.deta.dev
-  visitor: true
-  pageview: true
+  serverURL: https://wlsrv.kanata.ml
+  visitor: ".leancloud-visitors-count"
+  pageview: ".leancloud-visitors-count"
   comment: true # display comment count
   requiredMeta: ["nick", "mail"]
+  wordLimit: 240
+  imageUploader: false
   emoji:
     - https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/weibo/
     - https://fastly.jsdelivr.net/gh/walinejs/emojis@latest/tieba/

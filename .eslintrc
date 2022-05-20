@@ -5,7 +5,9 @@
     "node": true
   },
   "globals": {
-    "hexo":"readonly"
+    "hexo":"readonly",
+    "CONFIG": "readonly",
+    "Yun": "readonly"
   },
   "extends": "hexo",
   "rules": {

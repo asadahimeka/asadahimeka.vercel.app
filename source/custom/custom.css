@@ -336,16 +336,6 @@ blockquote {
   width: auto;
 }
 
-body:not(.is-home) .sidebar {
-  background-image: none;
-}
-
-.is-home .live2d {
-  left: unset;
-  right: -96px;
-  bottom: 40px;
-}
-
 html:not(.dark) ::placeholder {
   color: grey;
 }
@@ -380,7 +370,9 @@ html:not(.dark) ::placeholder {
   fill: white !important;
 }
 
-
+#comment {
+  z-index: 999;
+}
 
 
 
