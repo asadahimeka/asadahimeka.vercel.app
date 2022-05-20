@@ -452,8 +452,8 @@ comment:
   tips:
     - 要不要和我说些什么？
   candidates:
-    - giscus
     - waline
+    - giscus
 
 # https://giscus.app/zh-CN
 giscus:
