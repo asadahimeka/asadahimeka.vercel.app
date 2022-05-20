@@ -350,6 +350,9 @@ html:not(.dark) ::placeholder {
   color: grey;
 }
 
+.wl-emoji-popup {
+  max-width: 421px !important;
+}
 .wl-emoji-popup button {
   width: auto !important;
   min-width: 2em;
@@ -369,7 +372,23 @@ html:not(.dark) ::placeholder {
   min-height: 2em;
 }
 
+.dark #yun-logo {
+  stroke: white;
+}
 
+.dark #vercel-logo {
+  fill: white !important;
+}
+
+
+
+
+
+
+
+
+
+/* fancybox style */
 .fancybox__backdrop::after {
   content: "";
   position: absolute;
@@ -444,12 +463,4 @@ html:not(.dark) ::placeholder {
 
 .with-fancybox #live2d-widget {
   opacity: 0 !important;
-}
-
-.dark #yun-logo {
-  stroke: white;
-}
-
-.dark #vercel-logo {
-  fill: white !important;
 }
