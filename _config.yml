@@ -217,9 +217,7 @@ live2d:
   debug: false
   model:
     # 推荐使用 CDN 来加载模型
-    # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json
-    # use: https://cdn.jsdelivr.net/gh/asadahimeka/live2d_demo@master/models/HyperdimensionNeptunia/histoire/index.json
-    use: https://pf.wuniutech.com/kari/files/-/live2d_models/histoire/index.json
+    use: https://cdn.jsdelivr.net/gh/asadahimeka/live2d_demo@master/models/HyperdimensionNeptunia/histoire/index.json
   display:
     position: right
     width: 165

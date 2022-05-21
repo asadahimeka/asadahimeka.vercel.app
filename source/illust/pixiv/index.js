@@ -92,11 +92,10 @@
   }
 
   function getDailyRankThumb(today) {
-    return fetchData('https://pf.wuniutech.com/kari/pixiv/storage/app/pixiv.json?' + today);
+    return fetchData('https://mk-pixiv.kanata.ml/storage/app/pixiv.json?' + today);
   }
-
   function getDailyRankSource(today) {
-    return fetchData('https://pf.wuniutech.com/kari/pixiv/storage/app/source.json?' + today);
+    return fetchData('https://mk-pixiv.kanata.ml/storage/app/source.json?' + today);
   }
 
   function getDailyRank() {
