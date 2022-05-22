@@ -183,7 +183,7 @@
       },
       async fetchData(refresh) {
         this.requestState = true;
-        const url = 'https://kona.cocomi.cf/post.json?tags=rating%3Asafe&' + this.params.toString();
+        const url = 'https://konachan.kanata.ml/post.json?tags=rating%3Asafe&' + this.params.toString();
         try {
           const results = await this.request(url);
           if (Array.isArray(results) && results.length > 0) {
