@@ -343,10 +343,12 @@ html:not(.dark) ::placeholder {
 .wl-emoji-popup {
   max-width: 357px !important;
 }
+
 .wl-emoji-popup button {
   width: auto !important;
   min-width: 2em;
 }
+
 .wl-tab-wrapper img[src^="https://i0.hdslb.com/bfs/emote"],
 .wl-tab-wrapper img[src^="https://npm.elemecdn.com/@himeka/mys_stickers"],
 .wl-tab-wrapper img[src^="https://img-static.mihoyo.com/communityweb/upload/"] {
@@ -355,12 +357,14 @@ html:not(.dark) ::placeholder {
   max-width: 60px !important;
   max-height: 60px !important;
 }
+
 .wl-content img[src^="https://i0.hdslb.com/bfs/emote"],
 .wl-content img[src^="https://npm.elemecdn.com/@himeka/mys_stickers"],
 .wl-content img[src^="https://img-static.mihoyo.com/communityweb/upload"] {
   width: 60px;
   height: 60px;
 }
+
 .wl-emoji-popup .wl-tabs {
   height: auto !important;
   min-height: 2em;
@@ -374,10 +378,30 @@ html:not(.dark) ::placeholder {
   fill: white !important;
 }
 
+#back-to-top {
+  z-index: 1000;
+}
+
+.sidebar {
+  z-index: 1010;
+}
+
 #comment {
   z-index: 999;
 }
 
+#comment img,
+#comment p,
+#comment div {
+  cursor: url(/custom/cursors/pointer.cur), auto;
+}
+
+@media screen and (max-width: 768px) {
+  .wl-gif-popup {
+    left: 0 !important;
+    width: 100% !important;
+  }
+}
 
 
 

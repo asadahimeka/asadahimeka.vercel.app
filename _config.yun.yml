@@ -165,7 +165,7 @@ pages:
 # Sidebar Avatar
 avatar:
   enable: true
-  url: https://pic.rmb.bdstatic.com/bjh/events/ef5b4dd6bd8c7a79588089d6152bc7b7.jpeg
+  url: https://dd-static.jd.com/ddimg/jfs/t1/189383/17/25386/40787/6289f448E0afb7904/d5dc07d2ae70bc52.jpg
   # If true, the avatar would be dispalyed in circle.
   rounded: true
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
@@ -453,11 +453,11 @@ comment:
     - 要不要和我说些什么？
   candidates:
     - waline
-    - giscus
+    # - giscus
 
 # https://giscus.app/zh-CN
 giscus:
-  enable: true
+  enable: false
   repo: asadahimeka/asadahimeka.vercel.app
   repo-id: R_kgDOHFcTmQ
   category: Announcements
