@@ -13,7 +13,7 @@ categories:
 
 ## 前言
 
-之前在改造一个用 Vuetify2 的 [项目](https://github.com/asadahimeka/userscripts/tree/master/yandere-masonry)，由于 Vuetify3 还处于 beta 阶段并且与 Vuetify2 相比缺失一些特性，但又想用 Vue3 的 `<script setup>` 语法，于是寻找了下相关方案，下面简单记录一下。
+之前在改造一个用 Vuetify2 的 [项目](https://github.com/asadahimeka/yandere-masonry)，由于 Vuetify3 还处于 beta 阶段并且与 Vuetify2 相比缺失一些特性，但又想用 Vue3 的 `<script setup>` 语法，于是寻找了下相关方案，下面简单记录一下。
 
 ## 开始之前
 
@@ -355,7 +355,7 @@ yarn dev
 
 ![图 1](https://pic.rmb.bdstatic.com/bjh/events/e5482b5a51ea9f2f0968d207ba92d137.png)
 
-项目代码见 [yandere-masonry](https://github.com/asadahimeka/userscripts/tree/master/yandere-masonry)
+项目代码见 [yandere-masonry](https://github.com/asadahimeka/yandere-masonry)
 
 ## Reference
 

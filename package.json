@@ -8,8 +8,7 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "bangumi": "hexo bangumi -u",
-    "fixvendor": "node vendor_fix.js",
-    "prebuild": "yarn clean && yarn bangumi && yarn fixvendor"
+    "prebuild": "yarn clean && yarn bangumi"
   },
   "engines": {
     "node": ">=14.0.0"
