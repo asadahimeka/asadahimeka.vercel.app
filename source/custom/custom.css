@@ -378,16 +378,8 @@ html:not(.dark) ::placeholder {
   fill: white !important;
 }
 
-#back-to-top {
-  z-index: 1000;
-}
-
-.sidebar {
-  z-index: 1010;
-}
-
 #comment {
-  z-index: 999;
+  z-index: 9;
 }
 
 #comment img,
