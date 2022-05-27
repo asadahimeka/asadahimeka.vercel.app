@@ -121,12 +121,13 @@
         images: []
       };
       rankData0.image.forEach((item, index) => {
+        const art = rankData0.url[index];
         const purl = results[1].image[index];
         toCacheData.images.push({
           thumb: item,
           large: buildLargeSrc(purl),
-          original: buildOriginSrc(purl),
-          link: 'https://www.pixiv.net/' + rankData0.url[index]
+          original: buildOriginSrc(art.split('/').pop()),
+          link: 'https://www.pixiv.net/' + art
         });
       });
       localStorage.setItem(cacheKey, JSON.stringify(toCacheData));
@@ -140,8 +141,8 @@
     return url.replace(/i\.pximg\.net\/c\/\d+x\d+/i, 'i.pixiv.re');
   }
 
-  function buildOriginSrc(url) {
-    return buildLargeSrc(url).replace('img-master', 'img-original').replace('_master1200', '');
+  function buildOriginSrc(id) {
+    return 'https://pid.kanata.ml/' + id;
   }
 
   function initMacy() {

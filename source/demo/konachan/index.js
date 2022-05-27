@@ -117,6 +117,7 @@
       // theme: { dark: true }
     }),
     data: {
+      siteName: 'konachan',
       showDrawer: false,
       showFab: false,
       showImageSelected: false,
@@ -145,7 +146,7 @@
     },
     computed: {
       title() {
-        return `${this.imageList.length} Posts of Konachan`;
+        return `${this.imageList.length} Posts`;
       },
       version() {
         return '2.0.106';
@@ -182,8 +183,10 @@
         return results;
       },
       async fetchData(refresh) {
+        const url = this.siteName === 'yandere'
+          ? 'https://kw.kanata.ml/?u=' + encodeURIComponent('https://yande.re/post.json?tags=rating%3Asafe&' + this.params.toString())
+          : 'https://konachan.kanata.ml/post.json?tags=rating%3Asafe&' + this.params.toString();
         this.requestState = true;
-        const url = 'https://konachan.kanata.ml/post.json?tags=rating%3Asafe&' + this.params.toString();
         try {
           const results = await this.request(url);
           if (Array.isArray(results) && results.length > 0) {
@@ -211,6 +214,14 @@
       refresh() {
         this.$vuetify.goTo(0);
         this.initData(true);
+      },
+      toggleSite() {
+        this.siteName = this.siteName === 'yandere' ? 'konachan' : 'yandere';
+        this.imageList = [];
+        this.refresh();
+      },
+      proxysrc(url) {
+        return 'https://proxy.cocomi.cf/?u=' + encodeURIComponent(url);
       },
       download(url, name) {
         const a = document.createElement('a');

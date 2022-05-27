@@ -125,15 +125,17 @@
       <v-app-bar app dense>
         <v-app-bar-nav-icon @click="showDrawer=!showDrawer"></v-app-bar-nav-icon>
         <v-toolbar-title v-text="title"></v-toolbar-title>
+        <v-btn v-if="siteName === 'yandere'" class="ml-4" text @click="toggleSite">Switch to Konachan</v-btn>
+        <v-btn v-else class="ml-4" text @click="toggleSite">Switch to Yande.re</v-btn>
         <v-spacer></v-spacer>
-        <v-btn text color="#ffffff" disabled>Rating Safe</v-btn>
+        <v-btn text disabled>Rating Safe</v-btn>
         <v-progress-linear :active="requestState" :height="6" color="deep-purple accent-4" indeterminate absolute
           bottom></v-progress-linear>
       </v-app-bar>
       <v-navigation-drawer v-model="showDrawer" app temporary>
         <v-list-item>
           <v-list-item-content>
-            <v-list-item-title class="title">Konachan</v-list-item-title>
+            <v-list-item-title class="title">Moebooru</v-list-item-title>
             <v-list-item-subtitle>Rating Safe</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
@@ -162,7 +164,7 @@
           <masonry :cols="columnCount" gutter="8px">
             <v-card class="mb-2" v-for="(image, index) in imageList" :key="index">
               <v-img transition="scroll-y-transition"
-                :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.previewUrl:''"
+                :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)? proxysrc(image.previewUrl) :''"
                 :aspect-ratio="image.aspectRatio"
                 @click="if(image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)){imageSelectedIndex=index;showImageSelected=true;}"
                 @click.middle="imageSelectedIndex=index;window.open('/post/show/' + imageSelected.id)">
@@ -191,7 +193,7 @@
           </v-fab-transition>
           <v-dialog v-model="showImageSelected" :width="imageSelectedWidth" :height="imageSelectedHeight"
             :overlay-opacity="0.7">
-            <v-img v-if="showImageSelected" :src="imageSelected.sampleUrl" :lazy-src="imageSelected.previewUrl"
+            <v-img v-if="showImageSelected" :src="proxysrc(imageSelected.sampleUrl)" :lazy-src="proxysrc(imageSelected.previewUrl)"
               @click="showImageInfo=!showImageInfo;">
               <template v-slot:placeholder>
                 <v-row v-if="imageSelected.isRatingS||(imageSelected.isRatingQ && showRatingQ)||(imageSelected.isRatingE && showRatingE)"
@@ -233,21 +235,21 @@
                   <v-list dense flat>
                     <v-list-item two-line link dense>
                       <v-list-item-content
-                        @click.stop="download(imageSelected.sampleUrl, imageSelected.sampleDownloadName)">
+                        @click.stop="download(proxysrc(imageSelected.sampleUrl), imageSelected.sampleDownloadName)">
                         <v-list-item-title>下载缩略图</v-list-item-title>
                         <v-list-item-subtitle v-text="imageSelected.sampleDownloadSecondText"></v-list-item-subtitle>
                       </v-list-item-content>
                     </v-list-item>
                     <v-list-item v-if="imageSelected.jpegSize !== 0" two-line link dense>
                       <v-list-item-content
-                        @click.stop="download(imageSelected.jpegUrl, imageSelected.jpegDownloadName)">
+                        @click.stop="download(proxysrc(imageSelected.jpegUrl), imageSelected.jpegDownloadName)">
                         <v-list-item-title>下载高清图</v-list-item-title>
                         <v-list-item-subtitle v-text="imageSelected.jpegDownloadSecondText"></v-list-item-subtitle>
                       </v-list-item-content>
                     </v-list-item>
                     <v-list-item two-line link dense>
                       <v-list-item-content
-                        @click.stop="download(imageSelected.fileUrl, imageSelected.fileDownloadName)">
+                        @click.stop="download(proxysrc(imageSelected.fileUrl), imageSelected.fileDownloadName)">
                         <v-list-item-title>下载原文件</v-list-item-title>
                         <v-list-item-subtitle v-text="imageSelected.fileDownloadSecondText"></v-list-item-subtitle>
                       </v-list-item-content>
