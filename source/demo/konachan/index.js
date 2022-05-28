@@ -221,7 +221,7 @@
         this.refresh();
       },
       proxysrc(url) {
-        return 'https://proxy.cocomi.cf/' + url;
+        return 'https://kw.cocomi.cf/' + url;
       },
       download(url, name) {
         const a = document.createElement('a');
