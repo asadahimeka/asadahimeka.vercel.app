@@ -148,7 +148,7 @@
             </v-list-item-content>
           </v-list-item>
           <v-list-item link
-            @click="window.open('https://github.com/coderzhaoziwei/yande-re-chinese-patch','_blank','noreferrer')">
+            @click="openUrl('https://github.com/coderzhaoziwei/yande-re-chinese-patch')">
             <v-list-item-icon class="mr-2">
               <v-icon>mdi-github</v-icon>
             </v-list-item-icon>
@@ -162,12 +162,12 @@
       <v-main app>
         <v-container ref="vcont" class="pa-2" fluid>
           <masonry :cols="columnCount" gutter="8px">
-            <v-card class="mb-2" v-for="(image, index) in imageList" :key="index">
+            <v-card class="mb-2" v-for="(image, index) in imageList" :key="index" style="max-height: 60vh;overflow: hidden;">
               <v-img transition="scroll-y-transition"
                 :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)? proxysrc(image.previewUrl) :''"
                 :aspect-ratio="image.aspectRatio"
                 @click="if(image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)){imageSelectedIndex=index;showImageSelected=true;}"
-                @click.middle="imageSelectedIndex=index;window.open('/post/show/' + imageSelected.id)">
+                @click.middle="imageSelectedIndex=index;openUrl('/post/show/' + imageSelected.id)">
                 <template v-slot:placeholder>
                   <v-row v-if="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)"
                     class="fill-height ma-0" align="center" justify="center">
@@ -204,23 +204,23 @@
               <v-toolbar v-show="showImageInfo" flat color="transparent">
                 <v-chip-group class="hidden-sm-and-down" column>
                   <v-chip v-for="tag in imageSelected.tagsArr" :key="tag" class="mr-1" small color="#ee8888b3" text-color="#ffffff"
-                    v-text="tag" @click.stop="window.open('https://konachan.com/post?tags='+tag,'_blank','noreferrer')">
+                    v-text="tag" @click.stop="openUrl(siteUrl('/post?tags='+tag))">
                   </v-chip>
                 </v-chip-group>
                 <v-spacer></v-spacer>
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on, attrs }">
                     <v-btn icon color="#ee8888" v-bind="attrs" v-on="on"
-                      @click.stop="window.open('https://konachan.net/post/show/' + imageSelected.id,'_blank','noreferrer')">
+                      @click.stop="openUrl(siteUrl('/post/show/' + imageSelected.id))">
                       <v-icon>mdi-link-variant</v-icon>
                     </v-btn>
                   </template>
-                  <span v-text="'详情 https://konachan.net/post/show/' + imageSelected.id"></span>
+                  <span v-text="'详情 ' + siteUrl('/post/show/' + imageSelected.id)"></span>
                 </v-tooltip>
                 <v-tooltip v-if="imageSelected.sourceUrl !== ''" bottom>
                   <template v-slot:activator="{ on, attrs }">
                     <v-btn icon color="#ee8888" v-bind="attrs" v-on="on"
-                      @click.stop="window.open(imageSelected.sourceUrl,'_blank','noreferrer')">
+                      @click.stop="openUrl(imageSelected.sourceUrl)">
                       <v-icon>mdi-launch</v-icon>
                     </v-btn>
                   </template>

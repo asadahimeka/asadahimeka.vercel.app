@@ -220,8 +220,15 @@
         this.imageList = [];
         this.refresh();
       },
+      openUrl(url) {
+        window.open(url, '_blank', 'noreferrer');
+      },
       proxysrc(url) {
         return 'https://kw.cocomi.cf/' + url;
+      },
+      siteUrl(path) {
+        if (this.siteName === 'yandere') return 'https://yande.re' + path;
+        return 'https://konachan.net' + path;
       },
       download(url, name) {
         const a = document.createElement('a');
