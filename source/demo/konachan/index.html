@@ -202,11 +202,6 @@
                 </v-row>
               </template>
               <v-toolbar v-show="showImageInfo" flat color="transparent">
-                <v-chip-group class="hidden-sm-and-down" column>
-                  <v-chip v-for="tag in imageSelected.tagsArr" :key="tag" class="mr-1" small color="#ee8888b3" text-color="#ffffff"
-                    v-text="tag" @click.stop="openUrl(siteUrl('/post?tags='+tag))">
-                  </v-chip>
-                </v-chip-group>
                 <v-spacer></v-spacer>
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on, attrs }">
@@ -266,6 +261,11 @@
                   <span>关闭</span>
                 </v-tooltip>
               </v-toolbar>
+              <v-chip-group v-show="showImageInfo" class="pa-3 hidden-sm-and-down" column style="position: absolute;bottom: 0;">
+                <v-chip v-for="tag in imageSelected.tagsArr" :key="tag" class="mr-1" small color="#ee8888b3" text-color="#ffffff"
+                  v-text="tag" @click.stop="openUrl(siteUrl('/post?tags='+tag))">
+                </v-chip>
+              </v-chip-group>
             </v-img>
           </v-dialog>
         </v-container>

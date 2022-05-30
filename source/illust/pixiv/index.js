@@ -156,7 +156,7 @@
         breakAt: { 1600: 4, 1200: 3, 500: 2 }
       });
       macyInstance.on('macy.images.complete', () => {
-        resolve();
+        resolve(macyInstance);
       });
     });
   }
