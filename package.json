@@ -19,7 +19,7 @@
   "dependencies": {
     "hexo": "^6.2.0",
     "hexo-abbrlink": "^2.2.1",
-    "hexo-bilibili-bangumi": "^1.7.5",
+    "hexo-bilibili-bangumi": "^1.7.8",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-better-sitemap": "^1.0.8",
     "hexo-generator-category": "^1.0.0",
