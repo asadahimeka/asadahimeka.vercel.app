@@ -101,12 +101,10 @@ comments: false
 </style>
 <script defer src="https://cdn.staticfile.org/alpinejs/3.10.2/cdn.min.js"></script>
 <section id="pixiv_rank" x-cloak x-data="ranklist">
-  <div class="spinner" x-show="loading"></div>
   <template x-if="showPixivic">
-    <iframe src="https://www.vilipix.com/ranking" frameborder="0"
-      style="width: 100%;height: 86vh;margin-top: 1rem"></iframe>
+    <iframe src="https://www.vilipix.com/ranking" frameborder="0" style="width: 100%;height: 86vh;margin-top: 1rem"></iframe>
   </template>
-  <div x-else class="rank_container" :class="{show:!loading}">
+  <div x-else class="rank_container show">
     <h3 style="margin-top:5px;text-align:center">
       <span x-text="rankDay"></span>
       <span><a href="https://pixiv.moe/" target="_blank" rel="nofollow noreferrer">pixivmoe</a></span>
@@ -114,6 +112,7 @@ comments: false
       <span><a href="javascript:;" @click="showPixivic = true">vilipix</a></span>
       <span><a href="https://pixivel.moe/" target="_blank" rel="nofollow noreferrer">pixivel</a></span>
     </h3>
+    <div class="spinner" x-show="loading"></div>
     <div id="macy-container">
       <template x-for="(item,index) in list" :key="index">
         <div class="demo">

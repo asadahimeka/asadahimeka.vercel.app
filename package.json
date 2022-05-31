@@ -19,7 +19,7 @@
   "dependencies": {
     "hexo": "^6.2.0",
     "hexo-abbrlink": "^2.2.1",
-    "hexo-bilibili-bangumi": "^1.7.5",
+    "hexo-bilibili-bangumi": "^1.7.8",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-better-sitemap": "^1.0.8",
     "hexo-generator-category": "^1.0.0",
@@ -38,7 +38,7 @@
     "hexo-wordcount": "^6.0.1"
   },
   "devDependencies": {
-    "eslint": "^8.15.0",
+    "eslint": "^8.16.0",
     "eslint-config-hexo": "^5.0.0",
     "hexo-all-minifier": "^0.5.7"
   }
