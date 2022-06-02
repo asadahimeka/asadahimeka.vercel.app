@@ -1,32 +1,72 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable new-cap */
-/* global ScrollReveal,Alpine,Fancybox,Macy */
+/* global ScrollReveal,Vue,Fancybox,imagesLoaded */
 (function() {
   document.addEventListener('DOMContentLoaded', () => {
     ScrollReveal().destroy();
-  });
-  document.addEventListener('alpine:init', () => {
-    Alpine.data('ranklist', () => ({
-      list: [],
-      rankDay: '',
-      showPixivic: false,
-      loading: true,
-      init: function() {
-        getDailyRank().then(res => {
-          this.rankDay = res.date;
-          this.list = res.images;
-          this.$nextTick(() => {
-            initMacy().then(() => {
+    const app = new Vue({
+      data: function() {
+        return {
+          list: [],
+          rankDay: '',
+          page: 1,
+          noMore: false,
+          loading: true,
+          moreLoading: false
+        };
+      },
+      created: function() {
+        this.init();
+      },
+      methods: {
+        init: function() {
+          getDailyRank().then(res => {
+            this.rankDay = res.date;
+            this.list = res.images;
+            this.$nextTick(() => {
               bindFancybox();
-              this.loading = false;
+              imagesLoaded('#macy-container', instance => {
+                this.loading = false;
+                instance.images.forEach(e => {
+                  e.img.classList.add('show');
+                });
+              });
             });
+          }).catch(_ => {
+            this.loading = false;
+            this.showPixivic = true;
           });
-        }).catch(_ => {
-          this.loading = false;
-          this.showPixivic = true;
-        });
+        },
+        getMoreData: function() {
+          if (this.noMore) return;
+          this.moreLoading = true;
+          if (this.page == 1) {
+            window.scroll(0, 0);
+            this.list = [];
+          }
+          getDailyRankFromApi(this.page).then(res => {
+            if (res.length === 0) {
+              this.noMore = true;
+              this.moreLoading = false;
+              return;
+            }
+            this.list = this.list.concat(res);
+            this.page++;
+            this.$nextTick(() => {
+              imagesLoaded('#macy-container', instance => {
+                this.moreLoading = false;
+                instance.images.forEach(e => {
+                  e.img.classList.add('show');
+                });
+              });
+            });
+          }).catch(() => {
+            this.moreLoading = false;
+          });
+        }
       }
-    }));
+    });
+    app.$mount('#pixiv_rank');
   });
 
   function bindFancybox() {
@@ -82,13 +122,14 @@
     });
   }
 
-  function fetchData(url) {
-    return fetch(url).then(res => {
-      if (res.ok) return res.json();
-      throw new Error('Resp not ok.');
-    }).then(res => res).catch(_ => {
-      throw new Error('Network error.');
-    });
+  async function fetchData(url) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('Resp not ok.');
+      return res.json();
+    } catch (error) {
+      throw new Error('Fetch error: ' + error);
+    }
   }
 
   function getDailyRankThumb(today) {
@@ -98,67 +139,70 @@
     return fetchData('https://mk-pixiv.kanata.ml/storage/app/source.json?' + today);
   }
 
-  function getDailyRank() {
+  async function getDailyRankFromApi(page) {
+    const res = await fetchData('https://pixiv-api.kanata.ml/v2?type=rank&mode=day&page=' + page);
+    return res.illusts.map(item => {
+      const mediumURL = item.image_urls.medium;
+      const largeURL = item.image_urls.large;
+      const originalURL = item.meta_single_page.original_image_url || item.meta_pages[0].image_urls.original;
+      return {
+        thumb: replaceProxyURL(mediumURL),
+        large: largeURL.replace(/i\.pximg\.net\/c\/\d+x\d+.*\/img-/i, 'pximg.cocomi.cf/img-'),
+        original: replaceProxyURL(originalURL),
+        link: 'https://www.pixiv.net/artworks/' + item.id
+      };
+    });
+  }
+
+  function replaceProxyURL(url) {
+    return url.replace('i.pximg.net', 'pximg.cocomi.cf');
+  }
+
+  async function getDailyRank() {
     const today = formatDate(new Date(), 'yyyy-MM-dd');
     const cacheKey = '__pixivDailyRank';
     const cacheJson = localStorage.getItem(cacheKey);
     try {
       const cacheData = JSON.parse(cacheJson);
-      if (cacheData.today == today) return Promise.resolve(cacheData);
+      if (cacheData && cacheData.today == today) return cacheData;
       localStorage.removeItem(cacheKey);
     } catch (error) {
       console.log(error);
     }
-    return Promise.all([
+    const results = await Promise.all([
       getDailyRankThumb(today),
       getDailyRankSource(today)
-    ]).then(results => {
-      if (results.some(e => !e.image || !e.image.length)) throw new Error('Empty.');
-      const rankData0 = results[0];
-      const toCacheData = {
-        today: today,
-        date: rankData0.date,
-        images: []
-      };
-      rankData0.image.forEach((item, index) => {
-        const art = rankData0.url[index];
-        const purl = results[1].image[index];
-        toCacheData.images.push({
-          thumb: item,
-          large: buildLargeSrc(purl),
-          original: buildOriginSrc(art.split('/').pop()),
-          link: 'https://www.pixiv.net/' + art
-        });
+    ]);
+    if (results.some(e => !e.image || !e.image.length)) throw new Error('Empty.');
+    const rankData0 = results[0];
+    const toCacheData = {
+      today: today,
+      date: rankData0.date,
+      images: []
+    };
+    rankData0.image.forEach((item, index) => {
+      const art = rankData0.url[index];
+      const purl = results[1].image[index];
+      toCacheData.images.push({
+        thumb: item.includes('cloud') ? purl.replace('i.pximg.net', 'pximg.cocomi.cf') : item,
+        large: buildLargeSrc(purl),
+        original: buildOriginSrc(art.split('/').pop()),
+        link: 'https://www.pixiv.net/' + art
       });
-      localStorage.setItem(cacheKey, JSON.stringify(toCacheData));
-      return toCacheData;
     });
+    localStorage.setItem(cacheKey, JSON.stringify(toCacheData));
+    return toCacheData;
   }
 
   function buildLargeSrc(url) {
     url = url || '';
     // return url.replace(/i\.pximg\.net\/c\/\d+x\d+/i, 'proxy.pixivel.moe');
-    return url.replace(/i\.pximg\.net\/c\/\d+x\d+/i, 'i.pixiv.re');
+    // return url.replace(/i\.pximg\.net\/c\/\d+x\d+/i, 'i.pixiv.re');
+    return url.replace(/i\.pximg\.net\/c\/\d+x\d+/i, 'pximg.cocomi.cf');
   }
 
   function buildOriginSrc(id) {
     return 'https://pid.kanata.ml/' + id;
-  }
-
-  function initMacy() {
-    return new Promise(resolve => {
-      const macyInstance = new Macy({
-        container: '#macy-container',
-        trueOrder: false,
-        waitForImages: false,
-        columns: 6,
-        margin: 16,
-        breakAt: { 1600: 4, 1200: 3, 500: 2 }
-      });
-      macyInstance.on('macy.images.complete', () => {
-        resolve(macyInstance);
-      });
-    });
   }
 
   function formatDate(date, fmt) {
