@@ -26,10 +26,10 @@
             this.$nextTick(() => {
               bindFancybox();
               imagesLoaded('#macy-container', instance => {
-                this.loading = false;
                 instance.images.forEach(e => {
                   e.img.classList.add('show');
                 });
+                this.loading = false;
               });
             });
           }).catch(_ => {
@@ -54,10 +54,10 @@
             this.page++;
             this.$nextTick(() => {
               imagesLoaded('#macy-container', instance => {
-                this.moreLoading = false;
                 instance.images.forEach(e => {
                   e.img.classList.add('show');
                 });
+                this.moreLoading = false;
               });
             });
           }).catch(() => {
