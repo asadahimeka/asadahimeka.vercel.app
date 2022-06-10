@@ -1,9 +1,12 @@
 ---
 title: npm WARN config global `--global` are deprecated 解决办法
+tags:
+  - Node.js
+  - npm
+abbrlink: db4d19bf
 date: 2022-06-09 11:38:53
 updated: 2022-06-09 11:38:53
 description:
-tags: [Node.js, npm]
 categories:
 ---
 
@@ -26,13 +29,13 @@ npm-windows-upgrade
 npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
 ```
 
-问题是在 Windows平台出现的，查了下貌似是 `npm.cmd` 里用了弃用的选项 `-g`，导致出现了这个警告。
+问题是在 Windows 平台出现的，查了下貌似是 `npm.cmd` 里用了弃用的选项 `-g`，导致出现了这个警告。
 
 ## 解决
 
 最新的 npm 应该已经修复了这个问题，但我在使用 `npm i -g npm` 安装最新版本后还是报这个警告，于是使用 `npm-windows-upgrade` 这个包来更新 npm。另外，既然是 `npm.cmd` 使用了废弃的选项，那就直接修改 `npm.cmd` ，把这个选项替换掉。
 
-### 使用 npm-windows-upgrade
+### 方式一：使用 npm-windows-upgrade
 
 ![npm-windows-upgrade](https://github-readme-stats.vercel.app/api/pin/?username=felixrieseberg&repo=npm-windows-upgrade)
 
@@ -53,7 +56,7 @@ npm-windows-upgrade
 
 ![图 1](https://pic.rmb.bdstatic.com/bjh/events/192d8487fa5adad5bcecfe083f52219b.png)
 
-### 修改 `npm.cmd`
+### 方式二：修改 `npm.cmd`
 
 1. 进入到 nodejs 安装目录
 
