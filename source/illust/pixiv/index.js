@@ -13,7 +13,8 @@
           page: 0,
           noMore: false,
           loading: true,
-          moreLoading: false
+          moreLoading: false,
+          showRBtn: false
         };
       },
       created: function() {
@@ -121,11 +122,11 @@
       on: {
         initCarousel: fancybox => {
           const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
-          fancybox.$container.style.setProperty('--bg-image', `url("${slide.$thumb.src}")`);
+          fancybox.$container.style.setProperty('--bg-image', `url("${slide.thumb}")`);
         },
         'Carousel.change': (fancybox, carousel, to, from) => {
           const slide = carousel.slides[to];
-          fancybox.$container.style.setProperty('--bg-image', `url("${slide.$thumb.src}")`);
+          fancybox.$container.style.setProperty('--bg-image', `url("${slide.thumb}")`);
         }
       }
     });
@@ -147,16 +148,29 @@
   async function getDailyRankFromApi(page, mode) {
     const res = await fetchData(`https://pixiv-api.kanata.ml/v2?type=rank&mode=${mode}&page=${page}`);
     return res.illusts.map(item => {
+      const pixivLink = 'https://www.pixiv.net/artworks/' + item.id;
+      const caption = `<div style="text-align:center">PID: ${item.id} 标题: ${item.title} 画师: ${item.user.name}<br/>标签: ${item.tags.map(e => e.name).join(' ')}<div>`;
+      if (item.meta_pages.length) {
+        return item.meta_pages.map(m => {
+          return {
+            thumb: replaceProxyURL(m.image_urls.medium),
+            large: m.image_urls.large.replace(/i\.pximg\.net\/c\/\d+x\d+.*\/img-/i, 'pximg.cocomi.cf/img-'),
+            original: replaceProxyURL(m.image_urls.original),
+            link: pixivLink,
+            caption: caption
+          };
+        });
+      }
       const mediumURL = item.image_urls.medium;
       const largeURL = item.image_urls.large;
-      const originalURL = item.meta_single_page.original_image_url || item.meta_pages[0].image_urls.original;
-      return {
+      const originalURL = item.meta_single_page.original_image_url;
+      return [{
         thumb: replaceProxyURL(mediumURL),
         large: largeURL.replace(/i\.pximg\.net\/c\/\d+x\d+.*\/img-/i, 'pximg.cocomi.cf/img-'),
         original: replaceProxyURL(originalURL),
-        link: 'https://www.pixiv.net/artworks/' + item.id,
-        caption: `<div style="text-align:center">PID: ${item.id} 标题: ${item.title} 画师: ${item.user.name}<br/>标签: ${item.tags.map(e => e.name).join(' ')}<div>`
-      };
+        link: pixivLink,
+        caption: caption
+      }];
     });
   }
 
@@ -189,12 +203,12 @@
     rankData0.image.forEach((item, index) => {
       const art = rankData0.url[index];
       const purl = results[1].image[index];
-      toCacheData.images.push({
+      toCacheData.images.push([{
         thumb: item.includes('cloud') ? purl.replace('i.pximg.net', 'pximg.cocomi.cf') : item,
         large: buildLargeSrc(purl),
         original: buildOriginSrc(art.split('/').pop()),
         link: 'https://www.pixiv.net/' + art
-      });
+      }]);
     });
     localStorage.setItem(cacheKey, JSON.stringify(toCacheData));
     return toCacheData;

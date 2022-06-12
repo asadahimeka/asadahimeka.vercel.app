@@ -1,9 +1,9 @@
 ---
-title: Pixiv Daily Ranking
+title: Pixiv Ranking
 comments: false
 ---
 <header class="post-header">
-  <h1 class="post-title" itemprop="name headline">Pixiv Daily Ranking</h1>
+  <h1 class="post-title" itemprop="name headline">Pixiv Ranking</h1>
 </header>
 <!-- more -->
 <link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css">
@@ -85,12 +85,25 @@ comments: false
     color: #fff;
   }
 
+  .demo .demo-mp {
+    left: unset;
+    right: 0;
+  }
+
   [v-cloak] {
     display: none !important;
   }
 
   .carousel__button {
     margin: 0 2px;
+  }
+
+  .has-caption {
+    padding-bottom: 24px;
+  }
+
+  .has-caption::after {
+    display: none;
   }
 
   .btn_container {
@@ -121,7 +134,7 @@ comments: false
 <section id="pixiv_rank" v-cloak>
   <div class="rank_container">
     <h3 style="margin-top:5px;text-align:center">
-      <span v-text="rankDay"></span>
+      <span v-text="rankDay" @click="showRBtn=true"></span>
       <span><a href="https://pixiv.moe/" target="_blank" rel="nofollow noreferrer">pixivmoe</a></span>
       <span><a href="https://pixivic.com/" target="_blank" rel="nofollow noreferrer">pixivic</a></span>
       <span><a href="https://www.vilipix.com/ranking" target="_blank" rel="nofollow noreferrer">vilipix</a></span>
@@ -138,13 +151,16 @@ comments: false
           <button class="load_btn" @click="fetchModeRank('week_original')">原创</button>
           <button class="load_btn" @click="fetchModeRank('day_male')">男性向</button>
           <button class="load_btn" @click="fetchModeRank('day_female')">女性向</button>
+          <button v-if="showRBtn" class="load_btn" @click="fetchModeRank('day_r18')">R18</button>
         </div>
       </div>
       <true-masonry :gap="{init: 16}" :cols="{init: 6, 1600: 4, 1200: 3, 500: 2, 400: 2}" :has-imgs="true">
         <div class="demo" v-for="(item,index) in list" :key="index">
-          <img class="demo-image" data-fancybox="gallery" :data-src="item.large" :data-download-src="item.original"
-            :data-caption="item.caption" :data-pixiv-link="item.link" :src="item.thumb" loading="lazy" alt>
-          <a class="demo-index" :href="item.link" v-text="index+1" target="_blank" rel="nofollow noreferrer"></a>
+          <img v-for="(img,imgIndex) in item" v-show="imgIndex==0" class="demo-image" :data-fancybox="index"
+            :data-src="img.large" :data-download-src="img.original" :data-caption="img.caption" :data-thumb="img.thumb"
+            :data-pixiv-link="img.link" :src="imgIndex==0?img.thumb:''" loading="lazy" alt>
+          <a class="demo-index" :href="item[0].link" v-text="index+1" target="_blank" rel="nofollow noreferrer"></a>
+          <div v-if="item.length>1" class="demo-index demo-mp" v-text="`${item.length} 张`"></div>
         </div>
       </true-masonry>
       <div v-show="moreLoading" class="spinner"></div>
