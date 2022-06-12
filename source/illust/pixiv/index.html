@@ -96,12 +96,13 @@ comments: false
   .btn_container {
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+    margin-bottom: 1.5rem;
   }
 
   .load_btn {
     width: 77px;
     height: 32px;
+    margin-right: 8px;
     border: 0;
     border-radius: 6px;
     color: #fff;
@@ -128,16 +129,28 @@ comments: false
     </h3>
     <div class="spinner" v-show="loading"></div>
     <div id="macy-container">
+      <div v-show="!loading">
+        <div class="btn_container">
+          <button class="load_btn" @click="fetchModeRank('day')">日榜</button>
+          <button class="load_btn" @click="fetchModeRank('week')">周榜</button>
+          <button class="load_btn" @click="fetchModeRank('month')">月榜</button>
+          <button class="load_btn" @click="fetchModeRank('week_rookie')">新人</button>
+          <button class="load_btn" @click="fetchModeRank('week_original')">原创</button>
+          <button class="load_btn" @click="fetchModeRank('day_male')">男性向</button>
+          <button class="load_btn" @click="fetchModeRank('day_female')">女性向</button>
+        </div>
+      </div>
       <true-masonry :gap="{init: 16}" :cols="{init: 6, 1600: 4, 1200: 3, 500: 2, 400: 2}" :has-imgs="true">
         <div class="demo" v-for="(item,index) in list" :key="index">
           <img class="demo-image" data-fancybox="gallery" :data-src="item.large" :data-download-src="item.original"
-            :data-pixiv-link="item.link" :src="item.thumb" loading="lazy" alt>
+            :data-caption="item.caption" :data-pixiv-link="item.link" :src="item.thumb" loading="lazy" alt>
           <a class="demo-index" :href="item.link" v-text="index+1" target="_blank" rel="nofollow noreferrer"></a>
         </div>
       </true-masonry>
       <div v-show="moreLoading" class="spinner"></div>
-      <div v-show="!loading&&!moreLoading" class="btn_container">
-        <button v-show="!noMore" class="load_btn" @click="getMoreData()" v-text="page == 1? '查看全部' : '加载更多'"></button>
+      <div v-show="!loading&&!moreLoading&&!noMore" class="btn_container" style="margin-top: 60px;">
+        <button v-if="page==0" class="load_btn" @click="fetchModeRank('day')">查看全部</button>
+        <button v-else class="load_btn" @click="getMoreData()">加载更多</button>
       </div>
       <p v-show="noMore" style="text-align: center;">没有了...</p>
     </div>

@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="https://lib.baomitu.com/vuetify/2.5.0/vuetify.min.css">
   <style>
     #loading {
-      /* background-color: #222; */
       height: 100%;
       width: 100%;
       position: fixed;
@@ -52,27 +51,20 @@
       float: left;
       margin-right: 20px;
       margin-top: 65px;
-      -moz-border-radius: 50% 50% 50% 50%;
-      -webkit-border-radius: 50% 50% 50% 50%;
       border-radius: 50% 50% 50% 50%;
     }
 
     #loading-object_one {
-      -webkit-animation: object_one 1.5s infinite;
       animation: object_one 1.5s infinite;
     }
 
     #loading-object_two {
-      -webkit-animation: object_two 1.5s infinite;
       animation: object_two 1.5s infinite;
-      -webkit-animation-delay: 0.25s;
       animation-delay: 0.25s;
     }
 
     #loading-object_three {
-      -webkit-animation: object_three 1.5s infinite;
       animation: object_three 1.5s infinite;
-      -webkit-animation-delay: 0.5s;
       animation-delay: 0.5s;
     }
 
@@ -174,10 +166,10 @@
           <masonry :cols="columnCount" gutter="8px">
             <v-card class="mb-2" v-for="(image, index) in imageList" :key="index" style="max-height: 60vh;overflow: hidden;">
               <v-img transition="scroll-y-transition"
-                :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)? proxysrc(image.previewUrl) :''"
+                :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE) ? proxysrc(image.previewUrl) : ''"
                 :aspect-ratio="image.aspectRatio"
                 @click="if(image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)){imageSelectedIndex=index;showImageSelected=true;}"
-                @click.middle="imageSelectedIndex=index;openUrl('/post/show/' + imageSelected.id)">
+              >
                 <template v-slot:placeholder>
                   <v-row v-if="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)"
                     class="fill-height ma-0" align="center" justify="center">

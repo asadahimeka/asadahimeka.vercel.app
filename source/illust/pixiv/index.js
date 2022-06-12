@@ -9,7 +9,8 @@
         return {
           list: [],
           rankDay: '',
-          page: 1,
+          rankType: 'day',
+          page: 0,
           noMore: false,
           loading: true,
           moreLoading: false
@@ -37,14 +38,22 @@
             this.showPixivic = true;
           });
         },
+        fetchModeRank(mode) {
+          this.rankType = mode;
+          this.page = 1;
+          this.noMore = false;
+          this.rankDay = formatDate(new Date(), 'yyyy-MM-dd');
+          this.getMoreData();
+        },
         getMoreData: function() {
+          if (this.page < 1) return;
           if (this.noMore) return;
           this.moreLoading = true;
           if (this.page == 1) {
             window.scroll(0, 0);
             this.list = [];
           }
-          getDailyRankFromApi(this.page).then(res => {
+          getDailyRankFromApi(this.page, this.rankType).then(res => {
             if (res.length === 0) {
               this.noMore = true;
               this.moreLoading = false;
@@ -123,13 +132,9 @@
   }
 
   async function fetchData(url) {
-    try {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error('Resp not ok.');
-      return res.json();
-    } catch (error) {
-      throw new Error('Fetch error: ' + error);
-    }
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Resp not ok.');
+    return res.json();
   }
 
   function getDailyRankThumb(today) {
@@ -139,8 +144,8 @@
     return fetchData('https://mk-pixiv.kanata.ml/storage/app/source.json?' + today);
   }
 
-  async function getDailyRankFromApi(page) {
-    const res = await fetchData('https://pixiv-api.kanata.ml/v2?type=rank&mode=day&page=' + page);
+  async function getDailyRankFromApi(page, mode) {
+    const res = await fetchData(`https://pixiv-api.kanata.ml/v2?type=rank&mode=${mode}&page=${page}`);
     return res.illusts.map(item => {
       const mediumURL = item.image_urls.medium;
       const largeURL = item.image_urls.large;
@@ -149,7 +154,8 @@
         thumb: replaceProxyURL(mediumURL),
         large: largeURL.replace(/i\.pximg\.net\/c\/\d+x\d+.*\/img-/i, 'pximg.cocomi.cf/img-'),
         original: replaceProxyURL(originalURL),
-        link: 'https://www.pixiv.net/artworks/' + item.id
+        link: 'https://www.pixiv.net/artworks/' + item.id,
+        caption: `<div style="text-align:center">PID: ${item.id} 标题: ${item.title} 画师: ${item.user.name}<br/>标签: ${item.tags.map(e => e.name).join(' ')}<div>`
       };
     });
   }
