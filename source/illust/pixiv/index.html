@@ -114,10 +114,22 @@ comments: false
     border-radius: 6px;
     color: #fff;
     outline: 0;
-    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(to right, #8f94fb, #4e54c8);
     opacity: 1;
     transition: opacity, transform 0.2s;
     cursor: pointer;
+  }
+
+  .load_btn.act {
+    background: linear-gradient(to right, #ff5858, #f857a6);
+  }
+
+  .load_btn_r {
+    background: linear-gradient(to right, #e35d5b, #e53935);
+  }
+
+  .load_more_btn {
+    background: linear-gradient(to right, #2948ff, #396afc);
   }
 
   .load_btn:hover {
@@ -137,15 +149,18 @@ comments: false
     <div class="spinner" v-show="loading"></div>
     <div id="macy-container">
       <div v-show="!loading">
-        <div class="btn_container">
-          <button class="load_btn" @click="fetchModeRank('day')">日榜</button>
-          <button class="load_btn" @click="fetchModeRank('week')">周榜</button>
-          <button class="load_btn" @click="fetchModeRank('month')">月榜</button>
-          <button class="load_btn" @click="fetchModeRank('week_rookie')">新人</button>
-          <button class="load_btn" @click="fetchModeRank('week_original')">原创</button>
-          <button class="load_btn" @click="fetchModeRank('day_male')">男性向</button>
-          <button class="load_btn" @click="fetchModeRank('day_female')">女性向</button>
-          <button v-if="showRBtn" class="load_btn" @click="fetchModeRank('day_r18')">R18</button>
+        <div class="btn_container" style="margin-top:-5px;">
+          <button class="load_btn" :class="{act:page>0&&rankType=='day'}" @click="fetchModeRank('day')">日榜</button>
+          <button class="load_btn" :class="{act:rankType=='week'}" @click="fetchModeRank('week')">周榜</button>
+          <button class="load_btn" :class="{act:rankType=='month'}" @click="fetchModeRank('month')">月榜</button>
+          <button class="load_btn" :class="{act:rankType=='week_rookie'}"
+            @click="fetchModeRank('week_rookie')">新人</button>
+          <button class="load_btn" :class="{act:rankType=='week_original'}"
+            @click="fetchModeRank('week_original')">原创</button>
+          <button class="load_btn" :class="{act:rankType=='day_male'}" @click="fetchModeRank('day_male')">男性向</button>
+          <button class="load_btn" :class="{act:rankType=='day_female'}"
+            @click="fetchModeRank('day_female')">女性向</button>
+          <button v-if="showRBtn" class="load_btn load_btn_r" @click="fetchModeRank('day_r18')">R18</button>
         </div>
       </div>
       <true-masonry :gap="{init: 16}" :cols="{init: 6, 1600: 4, 1200: 3, 500: 2, 400: 2}" :has-imgs="true">
@@ -159,8 +174,8 @@ comments: false
       </true-masonry>
       <div v-show="moreLoading" class="spinner"></div>
       <div v-show="!loading&&!moreLoading&&!noMore" class="btn_container" style="margin-top: 60px;">
-        <button v-if="page==0" class="load_btn" @click="fetchModeRank('day')">查看全部</button>
-        <button v-else class="load_btn" @click="getMoreData()">加载更多</button>
+        <button v-if="page==0" class="load_btn load_more_btn" @click="fetchModeRank('day')">查看全部</button>
+        <button v-else class="load_btn load_more_btn" @click="getMoreData()">加载更多</button>
       </div>
       <p v-show="noMore" style="text-align: center;">没有了...</p>
     </div>

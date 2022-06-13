@@ -43,7 +43,7 @@
           this.rankType = mode;
           this.page = 1;
           this.noMore = false;
-          this.rankDay = formatDate(new Date(), 'yyyy-MM-dd');
+          this.rankDay = getDay(-1);
           this.getMoreData();
         },
         getMoreData: function() {
@@ -179,7 +179,7 @@
   }
 
   async function getDailyRank() {
-    const today = formatDate(new Date(), 'yyyy-MM-dd');
+    const today = getDay(0);
     const cacheKey = '__pixivDailyRank';
     const cacheJson = localStorage.getItem(cacheKey);
     try {
@@ -225,20 +225,17 @@
     return 'https://pid.kanata.ml/' + id;
   }
 
-  function formatDate(date, fmt) {
-    const o = {
-      'M+': date.getMonth() + 1,
-      'd+': date.getDate(),
-      'h+': date.getHours(),
-      'm+': date.getMinutes(),
-      's+': date.getSeconds(),
-      'q+': Math.floor((date.getMonth() + 3) / 3),
-      'S': date.getMilliseconds()
-    };
-    if (/(y+)/.test(fmt)) { fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length)); }
-    for (const k in o) {
-      if (new RegExp('(' + k + ')').test(fmt)) { fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length)); }
-    }
-    return fmt;
+  function getDay(num) {
+    const str = '-';
+    const today = new Date();
+    const nowTime = today.getTime();
+    const ms = 24 * 3600 * 1000 * num;
+    today.setTime(parseInt(nowTime + ms, 10));
+    const oYear = today.getFullYear();
+    let oMoth = (today.getMonth() + 1).toString();
+    if (oMoth.length <= 1) oMoth = '0' + oMoth;
+    let oDay = today.getDate().toString();
+    if (oDay.length <= 1) oDay = '0' + oDay;
+    return oYear + str + oMoth + str + oDay;
   }
 }());
