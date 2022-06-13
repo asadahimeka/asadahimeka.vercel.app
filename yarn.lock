@@ -2649,10 +2649,10 @@ hexo-theme-landscape@^0.0.3:
   resolved "https://registry.npmmirror.com/hexo-theme-landscape/-/hexo-theme-landscape-0.0.3.tgz#87d1f4d613da9be5245dad0d4b80479eab70d386"
   integrity sha512-b0Di+TUVs4ESrNX4ULEh9uQmADpO6kr10rIJ2OGZM8suNQNFKdxn+vJUjnLfKkCPJAfVmS7/S83KCNYe4tpoNw==
 
-hexo-theme-yun@1.9.3:
-  version "1.9.3"
-  resolved "https://registry.npmmirror.com/hexo-theme-yun/-/hexo-theme-yun-1.9.3.tgz#96551e124ade7dac01cef7195666cab0888a99d9"
-  integrity sha512-P9o0eUbWxOWd7zXM8n9/dk20q4ZNvqUIfoG07jWAv+5gkPxPHEslw/ruNQ6xd+lLOREsl5by8MNBuToYNroOjg==
+hexo-theme-yun@1.10.4:
+  version "1.10.4"
+  resolved "https://registry.yarnpkg.com/hexo-theme-yun/-/hexo-theme-yun-1.10.4.tgz#aa8239b9a7574e8844bcf7d570a96263c8845633"
+  integrity sha512-AEzgZ+MWVSD9YhGaMmlcEhWFIxbTdkHbUg8M5ThDzYptfRBLV6foShJsYXPdak+lOhyGZTJIoZ0pf2azzP64dg==
 
 hexo-util@^0.1.7:
   version "0.1.7"
