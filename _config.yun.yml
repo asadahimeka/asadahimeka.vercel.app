@@ -296,7 +296,7 @@ bg_image:
   # dark: /images/8.jpg
   dark: https://upload-bbs.mihoyo.com/upload/2022/04/04/260511332/0cf3ad25832dd5452619a03dfec1f8fb_1110460970989339648.jpg
   # blur: 2px
-  # opacity: 1
+  opacity: 0.8
 
 # Reward (Donate)
 # If enable true, reward would be displayed in every posts and pages by default.

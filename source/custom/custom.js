@@ -69,6 +69,9 @@
   }
 
   function setFancyBox() {
+    q('.copyright>span', el => {
+      el.innerHTML = el.innerHTML.trim();
+    });
     q('.site-author-name a', el => { el.title = '关于'; });
     q('.site-name', el => { el.title = '关于站点'; });
     q('#back-to-top', el => {
