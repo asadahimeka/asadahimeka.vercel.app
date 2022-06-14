@@ -262,7 +262,8 @@ banner:
   border: true
   cloud:
     enable: true
-    color: "#FEDFE1"
+    # color: "#FEDFE1"
+    color: "#937bbf"
   go_down:
     enable: true
     icon: icon-arrow-down-s-line
@@ -289,12 +290,13 @@ bg_image:
   enable: true
   # url: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/stars-timing-0-blur-30px.jpg # recomend image related to your mode
   # url: /images/2.png
-  url: https://pic.rmb.bdstatic.com/bjh/events/96f326c7a71260bd68a08d832d57550a.png
+  # url: https://pic.rmb.bdstatic.com/bjh/events/96f326c7a71260bd68a08d832d57550a.png
+  url: https://pic.rmb.bdstatic.com/bjh/events/660cf2113b0734ea0cc0ce2aeaf13a71.jpeg
   # dark: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/galaxy.jpg
   # dark: /images/8.jpg
   dark: https://upload-bbs.mihoyo.com/upload/2022/04/04/260511332/0cf3ad25832dd5452619a03dfec1f8fb_1110460970989339648.jpg
-  # blur: 30px
-  opacity: 1
+  # blur: 2px
+  # opacity: 1
 
 # Reward (Donate)
 # If enable true, reward would be displayed in every posts and pages by default.
