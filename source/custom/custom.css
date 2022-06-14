@@ -205,14 +205,27 @@ html:not(.dark) .sidebar {
   background-position: right -2.5rem bottom;
 }
 
-html:not(.dark) #footer {
-  color: #111;
-  background-color: #fff;
+.vertical-line-bottom {
+  display: none;
 }
 
-.dark #footer {
-  background-color: rgba(23, 32, 42, 0.95)
+html:not(.dark) #say,
+.post-nav {
+  background-color: rgba(255, 255, 255, 0.5);
 }
+
+.dark .post-nav {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+html:not(.dark) #footer {
+  color: #000;
+  /* background-color: #fff; */
+}
+
+/* .dark #footer {
+  background-color: rgba(23, 32, 42, 0.95)
+} */
 
 #footer {
   margin-top: 0.5rem !important;
@@ -221,7 +234,11 @@ html:not(.dark) #footer {
 }
 
 #footer a {
-  color: #7e2eff;
+  color: #6000fb;
+}
+
+.dark #footer a {
+  color: #ccc6ff;
 }
 
 .post-card {
@@ -351,7 +368,8 @@ html:not(.dark) body::before {
   background: #fff !important;
 }
 
-#menu-btn, #search {
+#menu-btn,
+#search {
   background-color: rgba(152, 109, 178, 1);
 }
 

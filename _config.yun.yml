@@ -262,8 +262,7 @@ banner:
   border: true
   cloud:
     enable: true
-    # color: "#FEDFE1"
-    color: "#937bbf"
+    color: "#FEDFE1"
   go_down:
     enable: true
     icon: icon-arrow-down-s-line
