@@ -358,8 +358,13 @@ html:not(.dark) ::placeholder {
   color: grey;
 }
 
+.dark body::before {
+  opacity: 1 !important;
+}
+
 html:not(.dark) body::before {
-  filter: blur(2px);
+  opacity: 0.8 !important;
+  /* filter: blur(2px); */
 }
 
 .hamburger-inner,

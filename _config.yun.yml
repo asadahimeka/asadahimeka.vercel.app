@@ -261,7 +261,7 @@ banner:
   title: ヒメカナのサイト
   border: true
   cloud:
-    enable: false
+    enable: true
     color: "#FEDFE1"
   go_down:
     enable: true
@@ -290,7 +290,8 @@ bg_image:
   # url: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/stars-timing-0-blur-30px.jpg # recomend image related to your mode
   # url: /images/2.png
   # url: https://pic.rmb.bdstatic.com/bjh/events/96f326c7a71260bd68a08d832d57550a.png
-  url: https://pic.rmb.bdstatic.com/bjh/events/660cf2113b0734ea0cc0ce2aeaf13a71.jpeg
+  # url: https://pic.rmb.bdstatic.com/bjh/events/660cf2113b0734ea0cc0ce2aeaf13a71.jpeg
+  url: https://dd-static.jd.com/ddimg/jfs/t1/206611/25/9501/148838/62a97b7cE39f5852a/c4da5ec9c5e90a65.jpg
   # dark: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/galaxy.jpg
   # dark: /images/8.jpg
   dark: https://upload-bbs.mihoyo.com/upload/2022/04/04/260511332/0cf3ad25832dd5452619a03dfec1f8fb_1110460970989339648.jpg
