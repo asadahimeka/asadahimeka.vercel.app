@@ -6,7 +6,7 @@
     setFancyBox();
     setFooterIcon();
     setBangumiBtn();
-    loadLive2d();
+    // loadLive2d();
   });
 
   function q(sel, cb) {

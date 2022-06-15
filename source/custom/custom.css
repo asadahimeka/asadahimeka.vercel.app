@@ -205,9 +205,9 @@ html:not(.dark) .sidebar {
   background-position: right -2.5rem bottom;
 }
 
-.vertical-line-bottom {
+/* .vertical-line-bottom {
   display: none;
-}
+} */
 
 html:not(.dark) #say,
 .post-nav {

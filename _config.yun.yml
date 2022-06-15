@@ -261,7 +261,7 @@ banner:
   title: ヒメカナのサイト
   border: true
   cloud:
-    enable: true
+    enable: false
     color: "#FEDFE1"
   go_down:
     enable: true
