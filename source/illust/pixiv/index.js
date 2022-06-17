@@ -150,7 +150,14 @@
     const res = await fetchData(`https://pixiv-api.kanata.ml/v2?type=rank&mode=${mode}&page=${page}&_t=${_t}`);
     return res.illusts.map(item => {
       const pixivLink = 'https://www.pixiv.net/artworks/' + item.id;
-      const caption = `<div style="text-align:center">PID: ${item.id} 标题: ${item.title} 画师: ${item.user.name}<br/>标签: ${item.tags.map(e => e.name).join(' ')}<div>`;
+      const tagsStr = item.tags.map(e => {
+        let tag = `<a href="https://www.pixiv.net/tags/${e.name}/artworks" target="_blank" rel="nofollow noreferrer" style="color:#0096fa">${e.name}</a>`;
+        if (e.translated_name) {
+          tag += `<small style="margin-left:5px;color:#adadad">[${e.translated_name}]</small>`;
+        }
+        return `<span style="margin-right:10px">${tag}</span>`;
+      }).join('');
+      const caption = `<div style="text-align:center">PID: ${item.id} 标题: ${item.title} 画师: ${item.user.name}<br/>标签: ${tagsStr}<div>`;
       if (item.meta_pages.length) {
         return item.meta_pages.map(m => {
           return {
