@@ -39,7 +39,7 @@
             this.showPixivic = true;
           });
         },
-        fetchModeRank(mode) {
+        fetchModeRank: function(mode) {
           this.rankType = mode;
           this.page = 1;
           this.noMore = false;
@@ -205,7 +205,7 @@
       const art = rankData0.url[index];
       const purl = results[1].image[index];
       toCacheData.images.push([{
-        thumb: item.includes('cloud') ? purl.replace('i.pximg.net', 'pximg.cocomi.cf') : item,
+        thumb: item,
         large: buildLargeSrc(purl),
         original: buildOriginSrc(art.split('/').pop()),
         link: 'https://www.pixiv.net/' + art
