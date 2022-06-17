@@ -205,7 +205,7 @@
       const art = rankData0.url[index];
       const purl = results[1].image[index];
       toCacheData.images.push([{
-        thumb: item,
+        thumb: item.includes('cloud') ? purl.replace('i.pximg.net', 'ipximg.kanata.ml') : item,
         large: buildLargeSrc(purl),
         original: buildOriginSrc(art.split('/').pop()),
         link: 'https://www.pixiv.net/' + art
