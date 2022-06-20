@@ -147,7 +147,7 @@
 
   async function getDailyRankFromApi(page, mode) {
     const _t = new Date().toLocaleString('ja-JP-u-ca-japanese').replace(/[\s/:]+/g, '').slice(0, -4);
-    const res = await fetchData(`https://pixiv-api.kanata.ml/v2?type=rank&mode=${mode}&page=${page}&_t=${_t}`);
+    const res = await fetchData(`https://pixiv-api.kanata.ml/v2?type=rank&mode=${mode}&page=${page}&_t=${_t}&_vercel_no_cache=1`);
     return res.illusts.map(item => {
       const pixivLink = 'https://www.pixiv.net/artworks/' + item.id;
       const tagsStr = item.tags.map(e => {
