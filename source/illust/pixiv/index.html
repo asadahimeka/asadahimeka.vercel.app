@@ -138,7 +138,7 @@ comments: false
     transform: scale(1.05);
   }
 </style>
-<section id="pixiv_rank" v-cloak>
+<section id="pixiv_rank">
   <div class="rank_container">
     <h3 style="margin-top:5px;text-align:center">
       <span v-text="rankDay" @click="showRBtn=true"></span>
@@ -148,7 +148,7 @@ comments: false
       <span><a href="https://pixivel.moe/rank" target="_blank" rel="nofollow noreferrer">pixivel</a></span>
     </h3>
     <div class="spinner" v-show="loading"></div>
-    <div id="macy-container">
+    <div id="macy-container" v-cloak>
       <div v-show="!loading">
         <div class="btn_container" style="margin-top:-5px;">
           <button class="load_btn" :class="{act:page>0&&rankType=='day'}" @click="fetchModeRank('day')">日榜</button>
@@ -169,7 +169,7 @@ comments: false
           <img v-for="(img,imgIndex) in item" v-show="imgIndex==0" class="demo-image" :data-fancybox="index"
             :data-src="img.large" :data-download-src="img.original" :data-caption="img.caption" :data-thumb="img.thumb"
             :data-pixiv-link="img.link" :src="imgIndex==0?img.thumb:''" loading="lazy" alt>
-          <a class="demo-index" :href="item[0].link" v-text="index+1" target="_blank" rel="nofollow noreferrer"></a>
+          <a class="demo-index" :href="item[0].link" v-text="`#${index+1}`" target="_blank" rel="nofollow noreferrer"></a>
           <div v-if="item.length>1" class="demo-index demo-mp" v-text="`${item.length} 张`"></div>
         </div>
       </true-masonry>
@@ -178,7 +178,7 @@ comments: false
         <button v-if="page==0" class="load_btn load_more_btn" @click="fetchModeRank('day')">查看全部</button>
         <button v-else class="load_btn load_more_btn" @click="getMoreData()">加载更多</button>
       </div>
-      <p v-show="noMore" style="text-align: center;">没有了...</p>
+      <p v-show="noMore" style="text-align:center;">没有了...</p>
     </div>
   </div>
 </section>
