@@ -70,5 +70,10 @@ npm-windows-upgrade
 
 4. 保存（以管理员身份）
 
+## Reference
+
+[stackoverflow/72401421](https://stackoverflow.com/questions/72401421)
+[npm-windows-upgrade](https://www.npmjs.com/package/npm-windows-upgrade)
+
 ---
 *fin.*
