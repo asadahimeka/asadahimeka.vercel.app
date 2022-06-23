@@ -83,7 +83,7 @@ const FormData = require('form-data')
 
 async function upload({ filePath, preUpload, ...options }) {
   const form = new FormData()
-  if (preUpload) await preUpload?.(filePath, form, options)
+  if (preUpload) await preUpload(filePath, form, options)
   const { api, fileField = 'file', formData = {}, headers = {}, isSuccess, returnUrl } = options
   form.append(fileField, createReadStream(filePath))
   for (const [formKey, formValue] of Object.entries(formData)) {
