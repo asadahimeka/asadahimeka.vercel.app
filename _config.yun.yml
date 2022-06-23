@@ -562,8 +562,8 @@ vendors:
   valine_js: https://cdn.staticfile.org/valine/1.4.18/Valine.min.js
   waline_js: https://cdn.staticfile.org/waline/1.6.0/Waline.min.js
   waline:
-    css: https://lib.baomitu.com/waline/2.5.1/waline.min.css
-    js: https://lib.baomitu.com/waline/2.5.1/waline.min.js
+    css: https://lib.baomitu.com/waline/2.6.1/waline.min.css
+    js: https://lib.baomitu.com/waline/2.6.1/waline.min.js
   minivaline_js: https://npm.elemecdn.com/minivaline@6
   # https://github.com/SukkaW/DisqusJS
   disqusjs:
