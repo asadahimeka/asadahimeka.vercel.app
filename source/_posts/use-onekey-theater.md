@@ -36,8 +36,8 @@ categories:
 
 视频对照：
 
-<div><video style="margin:0" width=300 height=400 controls src="https://himekana.coding.net/p/test/d/khn/git/raw/stk/douga/VID_20210521_175525.mp4"></video></div>
+<div><video style="margin:0" width=300 height=400 controls src="https://code.aliyun.com/asadahimeka/nodejs-upload-demo/raw/stk/douga/VID_20210521_175525.mp4"></video></div>
 
 ### 下载地址
 
-[Onekey Theater.zip](https://himekana.coding.net/p/test/d/khn/git/raw/stk/sonota/Onekey_Theater.zip)
+[Onekey Theater.zip](https://files-cdn.cnblogs.com/files/blogs/752151/Onekey_Theater.zip)
