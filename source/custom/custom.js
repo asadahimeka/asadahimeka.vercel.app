@@ -55,16 +55,16 @@
     if (document.body.clientWidth < 600) return;
     if (!(CONFIG.page.isPost || Yun.utils.isHome())) return;
     document.body.insertAdjacentHTML('beforeend', '<style>.live2d {position: fixed;right: -96px;bottom: 40px;width: 500px!important;height: 437.5px!important;z-index: 8;pointer-events: none!important;transition: 0.2s;}</style><div id="live2d" class="live2d"><canvas id="live2dm" class="live2d" style="z-index: 999 !important; width: 800px; height: 700px; touch-action: none; cursor: inherit;" width="800" height="700"></canvas></div>');
-    loadScript('https://npm.elemecdn.com/chenyfan-os@0.0.0-r3/load.js', true, () => {
-      window.baseModelPath = 'https://npm.elemecdn.com/chenyfan-oss@2.0.3';
+    loadScript('https://cdn.jsdelivr.net/npm/chenyfan-os@0.0.0-r3/load.js', true, () => {
+      window.baseModelPath = 'https://cdn.jsdelivr.net/npm/chenyfan-oss@2.0.3';
       window.loadModel();
     });
   }
 
   function loadFancyBox() {
     if (CONFIG.page.isPost) {
-      h.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css"><style>.post-body img{cursor:zoom-in;}</style>');
-      loadScript('https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.umd.js', true);
+      h.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="https://lib.baomitu.com/fancyapps-ui/4.0.27/fancybox.min.css"><style>.post-body img{cursor:zoom-in;}</style>');
+      loadScript('https://lib.baomitu.com/fancyapps-ui/4.0.27/fancybox.umd.min.js', true);
     }
   }
 

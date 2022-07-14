@@ -203,7 +203,7 @@ aplayer:
   cdn: https://lib.baomitu.com/aplayer/latest/APlayer.min.js
   style_cdn: https://lib.baomitu.com/aplayer/latest/APlayer.min.css
   meting: true
-  meting_cdn: https://npm.elemecdn.com/meting@1/dist/Meting.min.js
+  meting_cdn: https://code.bdstatic.com/npm/meting@1.2.0/dist/Meting.min.js
 
 live2d:
   enable: false
