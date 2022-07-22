@@ -165,7 +165,9 @@
             large: m.image_urls.large.replace(/i\.pximg\.net\/c\/\d+x\d+.*\/img-/i, 'pximg.cocomi.cf/img-'),
             original: replaceProxyURL(m.image_urls.original),
             link: pixivLink,
-            caption: caption
+            caption: caption,
+            title: item.title,
+            author: item.user.name
           };
         });
       }
@@ -177,7 +179,9 @@
         large: largeURL.replace(/i\.pximg\.net\/c\/\d+x\d+.*\/img-/i, 'pximg.cocomi.cf/img-'),
         original: replaceProxyURL(originalURL),
         link: pixivLink,
-        caption: caption
+        caption: caption,
+        title: item.title,
+        author: item.user.name
       }];
     });
   }
@@ -201,21 +205,23 @@
       getDailyRankThumb(today),
       getDailyRankSource(today)
     ]);
-    if (results.some(e => !e.image || !e.image.length)) throw new Error('Empty.');
+    if (results.some(e => !e.data || !e.data.length)) throw new Error('Empty.');
     const rankData0 = results[0];
     const toCacheData = {
       today: today,
       date: rankData0.date,
       images: []
     };
-    rankData0.image.forEach((item, index) => {
+    rankData0.data.forEach((item, index) => {
       const art = rankData0.url[index];
       const purl = results[1].image[index];
       toCacheData.images.push([{
-        thumb: item.includes('cloud') ? purl.replace('i.pximg.net', 'ipximg.kanata.ml') : item,
+        thumb: item.url.includes('pic.rmb.bdstatic.com') ? item.url : purl.replace('i.pximg.net', 'ipximg.kanata.ml'),
         large: buildLargeSrc(purl),
         original: buildOriginSrc(art.split('/').pop()),
-        link: 'https://www.pixiv.net/' + art
+        link: 'https://www.pixiv.net/' + art,
+        title: item.title,
+        author: item.user_name
       }]);
     });
     localStorage.setItem(cacheKey, JSON.stringify(toCacheData));

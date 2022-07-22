@@ -90,6 +90,36 @@ comments: false
     right: 0;
   }
 
+  .demo .demo-desp {
+    left: unset;
+    top: unset;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 0.4s;
+  }
+
+  .demo:hover .demo-desp {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .demo .demo-desp h5 {
+    margin: 5px 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .demo .demo-desp p {
+    margin: 0 0 5px;
+  }
+
   [v-cloak] {
     display: none !important;
   }
@@ -172,6 +202,10 @@ comments: false
             :data-pixiv-link="img.link" :src="imgIndex==0?img.thumb:''" loading="lazy" alt>
           <a class="demo-index" :href="item[0].link" v-text="`#${index+1}`" target="_blank" rel="nofollow noreferrer"></a>
           <div v-if="item.length>1" class="demo-index demo-mp" v-text="`${item.length} 张`"></div>
+          <div class="demo-index demo-desp">
+            <h5 v-text="item[0].title" :title="item[0].title"></h5>
+            <p v-text="item[0].author" :title="item[0].author"></p>
+          </div>
         </div>
       </true-masonry>
       <div v-show="moreLoading" class="spinner"></div>

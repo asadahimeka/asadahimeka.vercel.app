@@ -450,7 +450,9 @@ html:not(.dark) body::before {
   }
 }
 
-
+body:not(.is-home) .footer-support {
+  display: none !important;
+}
 
 
 
