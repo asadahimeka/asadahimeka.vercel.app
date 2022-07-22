@@ -576,4 +576,4 @@ vendors:
     core: https://cdn.jsdelivr.net/npm/@unocss/runtime/core.global.js
     uno: https://cdn.jsdelivr.net/npm/@unocss/runtime/uno.global.js
     attributify: https://cdn.jsdelivr.net/npm/@unocss/runtime/attributify.global.js
-    mini: https://cdn.jsdelivr.net/npm/@unocss/runtime/mini.global.js
+    mini: https://npm.sourcegcdn.com/@unocss/runtime@0.44.5/mini.global.js
